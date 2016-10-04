@@ -1,0 +1,83 @@
+{% extends "base.html" %}
+
+{% set history = [
+	{"title": "Упаковка номер 14", "date": "14.05.2016", "price": "18 000 руб за кв. м.", "status": "принят"},
+	{"title": "Большая лента для перевязки", "date": "01.02.2016", "price": "5 000 за рулон.", "status": "собирается"},
+	{"title": "Упаковка номер 14", "date": "14.05.2016", "price": "18 000 руб за кв. м.", "status": "отправлен"},
+	{"title": "Большая лента для перевязки", "date": "01.02.2016", "price": "5 000 за рулон.", "status": "доставлен"},
+	{"title": "Упаковка номер 14", "date": "14.05.2016", "price": "18 000 руб за кв. м.", "status": "принят"},
+	{"title": "Большая лента для перевязки", "date": "01.02.2016", "price": "5 000 за рулон.", "status": "собирается"},
+	{"title": "Упаковка номер 14", "date": "14.05.2016", "price": "18 000 руб за кв. м.", "status": "отправлен"},
+	{"title": "Большая лента для перевязки", "date": "01.02.2016", "price": "5 000 за рулон.", "status": "доставлен"},
+	{"title": "Упаковка номер 14", "date": "14.05.2016", "price": "18 000 руб за кв. м.", "status": "принят"},
+	{"title": "Большая лента для перевязки", "date": "01.02.2016", "price": "5 000 за рулон.", "status": "собирается"},
+	{"title": "Упаковка номер 14", "date": "14.05.2016", "price": "18 000 руб за кв. м.", "status": "отправлен"},
+	{"title": "Большая лента для перевязки", "date": "01.02.2016", "price": "5 000 за рулон.", "status": "доставлен"},
+	{"title": "Упаковка номер 14", "date": "14.05.2016", "price": "18 000 руб за кв. м.", "status": "принят"},
+	{"title": "Большая лента для перевязки", "date": "01.02.2016", "price": "5 000 за рулон.", "status": "собирается"},
+	{"title": "Упаковка номер 14", "date": "14.05.2016", "price": "18 000 руб за кв. м.", "status": "отправлен"},
+	{"title": "Большая лента для перевязки", "date": "01.02.2016", "price": "5 000 за рулон.", "status": "доставлен"},
+	{"title": "Упаковка номер 14", "date": "14.05.2016", "price": "18 000 руб за кв. м.", "status": "принят"},
+	{"title": "Большая лента для перевязки", "date": "01.02.2016", "price": "5 000 за рулон.", "status": "собирается"},
+	{"title": "Упаковка номер 14", "date": "14.05.2016", "price": "18 000 руб за кв. м.", "status": "отправлен"},
+	{"title": "Большая лента для перевязки", "date": "01.02.2016", "price": "5 000 за рулон.", "status": "доставлен"}
+]%}
+
+{% block content %}
+	<div class="cabinet">
+		<div class="page__container">
+			{% include 'breadcrumbs.html' %}
+			<div class="h1 cabinet__head">Личный кабинет</div>
+			<div class="cabinet__tab">
+				<div class="cabinet__tab-item">
+					<input type="radio" class="cabinet__tab-input" value="ur" name="face" id="ur" checked/>
+					<label for="ur" class="cabinet__tab-label"><span>Для юридических лиц</span></label>
+				</div>
+				<div class="cabinet__tab-item">
+					<input type="radio" class="cabinet__tab-input" value="ur" name="face" id="fiz" />
+					<label for="fiz" class="cabinet__tab-label"><span>Для физических лиц</span></label>
+				</div>
+			</div>
+			<ul class="cabinet__breadcrumbs">
+				<li class="cabinet__breadcrumbs-item">
+					Регистрационные<br>данные
+				</li>
+				<li class="cabinet__breadcrumbs-item cabinet__breadcrumbs-item_active">
+					История<br>покупок
+				</li>
+				<li class="cabinet__breadcrumbs-item cabinet__breadcrumbs-item_active">
+					<a href="#doc" class="fancybox-link">Запрос на получение<br>документов</a>
+				</li>
+			</ul>
+			<table class="cabinet__history">
+				<thead>
+					<tr>
+						<th class="cabinet__name">Название</th>
+						<th class="cabinet__date">Дата</th>
+						<th class="cabinet__price">Стоимость</th>
+						<th class="cabinet__status">Статус заказа</th>
+						<th class="cabinet__button"></th>
+					</tr>
+				</thead>
+				<tbody>
+					{% for item in history %}
+						<tr class="cabinet__row cabinet__row_toggle cabinet__row_{% if loop.index%2 != 0 %}odd{% else %}even{% endif %}">
+							<td class="cabinet__name">{{ item.title }}</td>
+							<td class="cabinet__date">{{ item.date }}</td>
+							<td class="cabinet__price">{{ item.price }}</td>
+							<td class="cabinet__status">{{ item.status }}</td>
+							<td class="cabinet__button">
+								<a href="#" class="cabinet__btn">Оформить повторно</a>
+							</td>
+						</tr>
+						<tr class="cabinet__row cabinet__row_hidden">
+							<td colspan="5">
+								{% include 'history.html' %}
+							</td>
+						</tr>
+					{% endfor %}
+				</tbody>
+			</table>
+		</div>
+	</div>
+{% endblock %}

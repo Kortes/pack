@@ -1,0 +1,44 @@
+{% set history = [
+	{"link": "#", "image": "images/catalog1.png", "title": "Разноцветная упаковка для цветов", "price": "7140", "articul": " 3538414", "payment": "Банковская карта", "delivery": "Самовывоз"},
+	{"link": "#", "image": "images/catalog2.png", "title": "Разноцветная упаковка для цветов", "price": "7140", "articul": " 3538414", "payment": "Банковская карта", "delivery": "Самовывоз"}
+]%}
+
+<table class="cabinet__list">
+	<thead>
+		<tr>
+			<th class="cabinet__list-name">Название товара:</th>
+			<th class="cabinet__list-count">Количество:</th>
+			<th class="cabinet__list-price">Стоимость:</th>
+			<th class="cabinet__list-payment">Способ оплаты:</th>
+			<th class="cabinet__list-delivery">Способ  доставки:</th>
+			<th class="cabinet__list-delete"></th>
+		</tr>
+	</thead>
+	<tbody>
+		{% for item in history %}
+			<tr>
+				<td class="cabinet__list-name">
+					<a href="{{ item.link }}" class="cabinet__link">
+						<span class="cabinet__image">
+							<img src="{{ item.image }}" alt="{{ item.title }}" class="cabinet__img" />
+						</span>
+						<span class="cabinet__content">
+							<span class="cabinet__title">{{ item.title }}</span>
+							<span class="cabinet__articul">Артикуль: {{ item.articul }}</span>
+						</span>
+					</a>
+				</td>
+				<td class="cabinet__list-count">
+					{% set countType = "cabinet" %}
+					{% include 'count.html' %}
+				</td>
+				<td class="cabinet__list-price">{{ item.price }}</td>
+				<td class="cabinet__list-payment">{{ item.payment }}</td>
+				<td class="cabinet__list-delivery">{{ item.delivery }}</td>
+				<td class="cabinet__list-delete">
+					<a href="#" class="cabinet__delete"></a>
+				</td>
+			</tr>
+		{% endfor %}
+	</tbody>
+</table>

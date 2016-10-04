@@ -1,0 +1,55 @@
+{% extends "base.html" %}
+
+{% set news = [
+	{"link": "/news-item.html","title": "Cамый известный текст «рыба»", "image": "images/news1.jpg", "text": "Недостатком является то обстоятельство, что в латыни некоторые буквы используют чаще или реже других, что создает другое изображение печати.", "type": "stock"},
+	{"link": "/news-item.html","title": "Cамый известный текст «рыба»", "image": "images/news1.jpg", "text": "Недостатком является то обстоятельство, что в латыни некоторые буквы используют чаще или реже других, что создает другое изображение печати."},
+	{"link": "/news-item.html","title": "Cамый известный текст «рыба»", "image": "images/news1.jpg", "text": "Недостатком является то обстоятельство, что в латыни некоторые буквы используют чаще или реже других, что создает другое изображение печати."},
+	{"link": "/news-item.html","title": "Cамый известный текст «рыба»", "image": "images/news1.jpg", "text": "Недостатком является то обстоятельство, что в латыни некоторые буквы используют чаще или реже других, что создает другое изображение печати."},
+	{"link": "/news-item.html","title": "Cамый известный текст «рыба»", "image": "images/news1.jpg", "text": "Недостатком является то обстоятельство, что в латыни некоторые буквы используют чаще или реже других, что создает другое изображение печати."},
+	{"link": "/news-item.html","title": "Cамый известный текст «рыба»", "image": "images/news1.jpg", "text": "Недостатком является то обстоятельство, что в латыни некоторые буквы используют чаще или реже других, что создает другое изображение печати."}
+]%}
+
+{% set tags = [
+	{"title": "Последние новости","id": "tag1", "active": true},
+	{"title": "Все новости","id": "tag2"}
+]%}
+
+{% block title %}{{ page.title }}{% endblock %}
+
+{% block content %}
+	<div class="page__container clearfix">
+		<div class="page__aside">
+			{% include 'left-menu.html' %}
+		</div>
+		<div class="page__content">
+			{% include 'breadcrumbs.html' %}
+		
+			<div class="text news">
+				<h1>Новости</h1>
+
+				<ul class="news__tags">
+					{% for tag in tags -%}
+						<li class="news__tag">
+							<input type="checkbox" id="{{ tag.id }}" class="news__tag-input" {% if tag.active %} checked {% endif %} />
+							<label for="{{ tag.id }}" class="news__tag-buttom">{{ tag.title }}</label>
+						</li>
+					{%- endfor %}
+				</ul>
+
+				<ul class="news__list">
+					{% for item in news -%}
+						<li class="news__item {% if item.type %}news__item_type{{ item.type }}{% endif %}">
+							<a href="{{ item.link }}" class="news__link">
+								<span class="news__image">
+									<img src="{{ item.image }}" class="news__img" alt="{{ item.title }}"/>
+								</span>
+								<span class="news__title">{{ item.title }}</span>
+								<span class="news__text">{{ item.text }}</span>
+							</a>
+						</li>
+					{%- endfor %}
+				</ul>
+			</div>
+		</div>
+	</div>
+{% endblock %}

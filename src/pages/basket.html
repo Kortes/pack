@@ -1,0 +1,148 @@
+{% extends "base.html" %}
+
+{% set product = [
+	{"link": "#", "image": "images/catalog1.png", "title": "Разноцветная упаковка для цветов", "price":{"rub": "489", "cop": "00"}, "articul": " 3538414"},
+	{"link": "#", "image": "images/catalog2.png", "title": "Разноцветная упаковка для цветов", "price":{"rub": "489", "cop": "00"}, "articul": " 3538414"},
+	{"link": "#", "image": "images/catalog3.png", "title": "Разноцветная упаковка для цветов", "price":{"rub": "489", "cop": "00"}, "articul": " 3538414"},
+	{"link": "#", "image": "images/catalog4.png", "title": "Разноцветная упаковка для цветов", "price":{"rub": "489", "cop": "00"}, "articul": " 3538414"}
+]%}
+
+{% block content %}
+	<div class="basket">
+		<div class="page__container">
+			{% include 'breadcrumbs.html' %}
+			<div class="h1 basket__head">Корзина товаров</div>
+			<table class="basket__table">
+				<thead>
+					<tr>
+						<th class="basket__name">Название товара:</th>
+						<th class="basket__count">Количество:</th>
+						<th class="basket__price">Цена:</th>
+						<th class="basket__delete"></th>
+					</tr>
+				</thead>
+				<tbody>
+					{% for item in product %}
+						<tr>
+							<td class="basket__name">
+								<a href="{{ item.link }}" class="basket__link">
+									<span class="basket__image">
+										<img src="{{ item.image }}" alt="{{ item.title }}" class="basket__img" />
+									</span>
+									<span class="basket__content">
+										<span class="basket__title">{{ item.title }}</span>
+										<span class="basket__articul">Артикуль: {{ item.articul }}</span>
+									</span>
+								</a>
+							</td>
+							<td class="basket__count">
+								{% set countType = "basket" %}
+								{% include 'count.html' %}
+							</td>
+							<td class="basket__price">
+								<div class="basket__price-wrapper">
+									<span class="basket__price-rub">{{ item.price.rub }}</span><span class="basket__price-cop">{{ item.price.cop }}</span>
+								</div>
+							</td>
+							<td class="basket__delete">
+								<a href="#" class="basket__delete-link"></a>
+							</td>
+						</tr>
+					{% endfor %}
+				</tbody>
+			</table>
+			<div class="basket__cell">
+				<label class="form__label color-grey">Доставка</label>
+				<label class="form__radio">
+					<input type="radio" name="delivery" value="free" class="form__radio-input" checked />
+					<span class="form__radio-label">
+						доставка по Екатеринбургу – 
+						<span class="form__radio-value">бесплатно</span>
+					</span>
+				</label>
+				<label class="form__radio">
+					<input type="radio" name="delivery" value="30" class="form__radio-input" />
+					<span class="form__radio-label">
+						до 30 км от екатеринбурга – 
+						<span class="form__radio-value">500 руб</span>
+					</span>
+				</label>
+				<label class="form__radio">
+					<input type="radio" name="delivery" value="specify" class="form__radio-input" />
+					<span class="form__radio-label">
+						свыше 30 км от екатеринбурга - 
+						<a href="#" class="form__radio-value">уточняйте у оператора</a>
+					</span>
+				</label>
+			</div><div class="basket__cell">
+				<label class="form__label color-grey">Итоговая стоимость</label>
+				<div class="basket__total">
+					<div class="basket__total-text">Общая стоимость без&nbsp;учёта доставки: </div>
+					<div class="basket__total-price">48 009</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="pattern pattern_grey">
+		<div class="page__container">
+			<form class="basket-form">
+				<legend class="form__legend">Оформить покупку</legend>
+				<div class="form__row">
+					<label class="form__label">Ваше имя</label>
+					<input type="text" name="name" class="form__input" />
+				</div>
+				<div class="form__row form__row_table">
+					<div class="form__cell form__cell_50">
+						<label class="form__label">ваш телефон</label>
+						<input type="text" name="phone" class="form__input" />
+					</div>
+					<div class="form__cell form__cell_50">
+						<label class="form__label">ваша почта</label>
+						<input type="text" name="mail" class="form__input" />
+					</div>
+				</div>
+				<div class="form__row">
+					<label class="form__label">Адрес доставки</label>
+					<input type="text" name="address" class="form__input" />
+				</div>
+				<div class="form__row">
+					<label class="form__label">Название компании</label>
+					<input type="text" name="company" class="form__input" />
+				</div>
+				<div class="form__row">
+					<label class="form__label">Способ оплаты</label>
+					<label class="form__check form__ib">
+						<input type="checkbox" name="payment" value="p1" class="form__check-input" />
+						<span>наличные</span>
+					</label>
+					<label class="form__check form__ib">
+						<input type="checkbox" name="payment" value="p2" class="form__check-input" checked />
+						<span>банковской картой курьеру</span>
+					</label>
+					<label class="form__check form__ib">
+						<input type="checkbox" name="payment" value="p3" class="form__check-input" checked />
+						<span>банковской картой онлайн</span>
+					</label>
+					<label class="form__check form__ib">
+						<input type="checkbox" name="payment" value="p4" class="form__check-input" checked />
+						<span>выставить счет</span>
+					</label>
+				</div>
+				<div class="form__row">
+					<label class="form__label">комментарий к заказу</label>
+					<textarea name="comment" class="form__textarea"></textarea>
+				</div>
+				<div class="form__row form__row_center">
+					<label class="form__check form__ib">
+						<input type="checkbox" name="info" value="true" class="form__check-input" checked />
+						<span>уведомлять по смс о статусе заказа</span>
+					</label>
+				</div>
+				<div class="form__row form__row_center">
+					<input type="submit" name="submit" value="Отправить заявку" class="form__submit" />
+				</div>
+			</form>
+		</div>
+	</div>
+
+{% endblock %}

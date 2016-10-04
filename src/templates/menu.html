@@ -1,0 +1,27 @@
+{% set menu = {
+	"list": [{"link": "#", "title": "О нас"},{"link": "#", "title": "Новости"},{"link": "#", "title": "Доставка"},{"link": "#", "title": "Контакты"},{"link": "#", "title": "Прайс-лист"}],
+	"sotial": [{"link": "#", "type": "fb"}, {"link": "#", "type": "tw"}, {"link": "#", "type": "google"}, {"link": "#", "type": "vk"}]
+}%}
+
+<div class="menu">
+	<div class="page__container clearfix">
+		<div class="menu__sotial">
+			Мы в соц.сетях: 
+			<ul class="menu__sotial-list">
+				{% for item in menu.sotial -%}
+					<li class="menu__sotial-item">
+						<a href="{{ item.link }}" class="menu__sotial-link menu__sotial-link_type_{{ item.type }}"></a> 
+					</li>
+				{%- endfor %}
+			</ul>
+		</div>
+		<a href="#" class="menu__button">положить выбранный товар в корзину</a>
+		<ul class="menu__list">
+			{% for item in menu.list -%}
+				<li class="menu__item">
+					<a href="{{ item.link }}" class="menu__link">{{ item.title }}</a> 
+				</li>
+			{%- endfor %}
+		</ul>
+	</div>
+</div>

@@ -1,0 +1,44 @@
+{% extends "base.html" %}
+
+{% set popular = {
+	"title": "Популярный товары", 
+	"link": "#", 
+	"list": [
+		{"title": "Мишка-конструктор  с основой. Оазис", "link": "#", "image": "images/goods.jpg", "text": "Рыбное описание товара Рыбное описание товара", "price": "250 000", "oldprice": "260 000", "count": "987", "type": "new" },
+		{"title": "Мишка-конструктор  с основой. Оазис", "link": "#", "image": "images/goods.jpg", "text": "Рыбное описание товара Рыбное описание товара", "price": "250 000", "oldprice": "260 000" },
+		{"title": "Мишка-конструктор  с основой. Оазис", "link": "#", "image": "images/goods.jpg", "text": "Рыбное описание товара Рыбное описание товара", "price": "250 000", "oldprice": "260 000", "count": "987", "type": "new" },
+		{"title": "Мишка-конструктор  с основой. Оазис", "link": "#", "image": "images/goods.jpg", "text": "Рыбное описание товара Рыбное описание товара", "price": "250 000", "oldprice": "260 000" }]
+}%}
+{% set discounted = {
+	"title": "Товары со скидками", "link": "#", "list": [
+		{"title": "Мишка-конструктор  с основой. Оазис", "link": "#", "image": "images/goods.jpg", "text": "Рыбное описание товара Рыбное описание товара", "price": "250 000", "oldprice": "260 000", "count": "987", "type": "new" },
+		{"title": "Мишка-конструктор  с основой. Оазис", "link": "#", "image": "images/goods.jpg", "text": "Рыбное описание товара Рыбное описание товара", "price": "250 000", "oldprice": "260 000" },
+		{"title": "Мишка-конструктор  с основой. Оазис", "link": "#", "image": "images/goods.jpg", "text": "Рыбное описание товара Рыбное описание товара", "price": "250 000", "oldprice": "260 000", "count": "987", "type": "new" },
+		{"title": "Мишка-конструктор  с основой. Оазис", "link": "#", "image": "images/goods.jpg", "text": "Рыбное описание товара Рыбное описание товара", "price": "250 000", "oldprice": "260 000" }
+	]
+}%}
+
+{% block title %}{{ page.title }}{% endblock %}
+
+{% block header %}
+	{{ super() }}
+	{% include 'carousel.html' %}
+{% endblock %}
+
+{% block content %}
+	{% include 'catalog.html' %}
+	{% include 'home-news.html' %}
+
+	{% set goods = popular %}
+	{% include 'goods.html'%}
+
+	{% set goods = discounted %}
+	{% include 'goods.html'%}
+
+	{% include 'before.html'%}
+	{% include 'seo.html'%}
+{% endblock %}
+
+{% block script %}
+    <script src="ui/customCarousel/customCarousel.js"></script>
+{% endblock %}

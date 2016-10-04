@@ -1,0 +1,57 @@
+{% set catalog = {
+	"links": [{"link": "#", "title": "Акции"}, {"link": "#", "title": "Новинки"}, {"link": "#", "title": "Популярные товары"}],
+	"list":[
+		{"link": "#", "title": "Упаковка  для цветов", "image": "images/catalog1.png", "list": [{"link":"#", "title": "Джутовое полотно"},{"link":"#", "title": "Изделие из льна"},{"link":"#", "title": "Органза"},{"link":"#", "title": "Крафт бумага"}]},
+		{"link": "#", "title": "Каркасы  для букетов", "image": "images/catalog2.png", "list": [{"link":"#", "title": "Джутовое полотно Джутовое полотно"},{"link":"#", "title": "Изделие из льна"},{"link":"#", "title": "Органза"},{"link":"#", "title": "Крафт бумага"}]},
+		{"link": "#", "title": "Ленты, рафия веревки", "image": "images/catalog3.png", "list": [{"link":"#", "title": "Джутовое полотно"},{"link":"#", "title": "Изделие из льна"},{"link":"#", "title": "Органза"},{"link":"#", "title": "Крафт бумага"}]},
+		{"link": "#", "title": "Аксессуары  и элементы  декора", "image": "images/catalog4.png", "list": [{"link":"#", "title": "Джутовое полотно"},{"link":"#", "title": "Изделие из льна"},{"link":"#", "title": "Органза"},{"link":"#", "title": "Крафт бумага"}]},
+		{"link": "#", "title": "Сухоцветы  и природные  материалы", "image": "images/catalog5.png", "list": [{"link":"#", "title": "Джутовое полотно"},{"link":"#", "title": "Изделие из льна"},{"link":"#", "title": "Органза"},{"link":"#", "title": "Крафт бумага"}]},
+		{"link": "#", "title": "Упаковка  для цветов", "image": "images/catalog1.png", "list": [{"link":"#", "title": "Джутовое полотно"},{"link":"#", "title": "Изделие из льна"},{"link":"#", "title": "Органза"},{"link":"#", "title": "Крафт бумага"}]},
+		{"link": "#", "title": "Каркасы  для букетов", "image": "images/catalog2.png", "list": [{"link":"#", "title": "Джутовое полотно Джутовое полотно"},{"link":"#", "title": "Изделие из льна"},{"link":"#", "title": "Органза"},{"link":"#", "title": "Крафт бумага"}]},
+		{"link": "#", "title": "Ленты, рафия веревки", "image": "images/catalog3.png", "list": [{"link":"#", "title": "Джутовое полотно"},{"link":"#", "title": "Изделие из льна"},{"link":"#", "title": "Органза"},{"link":"#", "title": "Крафт бумага"}]},
+		{"link": "#", "title": "Аксессуары  и элементы  декора", "image": "images/catalog4.png", "list": [{"link":"#", "title": "Джутовое полотно"},{"link":"#", "title": "Изделие из льна"},{"link":"#", "title": "Органза"},{"link":"#", "title": "Крафт бумага"}]},
+		{"link": "#", "title": "Сухоцветы  и природные  материалы", "image": "images/catalog5.png", "list": [{"link":"#", "title": "Джутовое полотно"},{"link":"#", "title": "Изделие из льна"},{"link":"#", "title": "Органза"},{"link":"#", "title": "Крафт бумага"}]},
+		{"link": "#", "title": "Упаковка  для цветов", "image": "images/catalog1.png", "list": [{"link":"#", "title": "Джутовое полотно"},{"link":"#", "title": "Изделие из льна"},{"link":"#", "title": "Органза"},{"link":"#", "title": "Крафт бумага"}]},
+		{"link": "#", "title": "Каркасы  для букетов", "image": "images/catalog2.png", "list": [{"link":"#", "title": "Джутовое полотно Джутовое полотно"},{"link":"#", "title": "Изделие из льна"},{"link":"#", "title": "Органза"},{"link":"#", "title": "Крафт бумага"}]},
+		{"link": "#", "title": "Ленты, рафия веревки", "image": "images/catalog3.png", "list": [{"link":"#", "title": "Джутовое полотно"},{"link":"#", "title": "Изделие из льна"},{"link":"#", "title": "Органза"},{"link":"#", "title": "Крафт бумага"}]},
+		{"link": "#", "title": "Аксессуары  и элементы  декора", "image": "images/catalog4.png", "list": [{"link":"#", "title": "Джутовое полотно"},{"link":"#", "title": "Изделие из льна"},{"link":"#", "title": "Органза"},{"link":"#", "title": "Крафт бумага"}]},
+		{"link": "#", "title": "Сухоцветы  и природные  материалы", "image": "images/catalog5.png", "list": [{"link":"#", "title": "Джутовое полотно"},{"link":"#", "title": "Изделие из льна"},{"link":"#", "title": "Органза"},{"link":"#", "title": "Крафт бумага"}]}
+	]
+}%}
+
+<div class="catalog">
+	<div class="catalog__head">
+		<div class="page__container clearfix">
+			<div class="catalog__title">весь каталог</div>
+			<ul class="catalog__menu">
+				{% for item in catalog.links -%}
+					<li class="catalog__menu-item">
+						<a href="{{ item.link }}" class="catalog__menu-link">{{ item.title }}</a>
+					</li>
+				{%- endfor %}
+			</ul>
+		</div>
+	</div>
+	<div class="page__container">
+		<ul class="catalog__list">
+			{% for item in catalog.list -%}
+				<li class="catalog__item">
+					<a class="catalog__item-title" href="{{ item.link }}">
+						<span class="catalog__item-wrapper">
+							<img src="{{ item.image }}" class="catalog__item-image" alt="{{ item.title }}"/>
+						</span>
+						<span class="catalog__item-name">{{ item.title }}</span>
+					</a>
+					<ul class="catalog__sublist">
+						{% for sub in item.list -%}
+							<li class="catalog__subitem">
+								<a href="{{ sub.link }}" class="catalog__subitem-link">{{ sub.title }}</a>
+							</li>
+						{%- endfor %}
+					</ul>
+					<a href="{{ item.link }}" class="catalog__more">Еще</a>
+				</li>
+			{%- endfor %}
+		</ul>
+	</div>
+</div>

@@ -1,0 +1,208 @@
+<div id="call" style="width: 500px;">
+	<form action="#" class="form fancybox__content">
+		<a href="javascript:;" onclick="$.fancybox.close();" class="fancybox__close"></a>
+		<legend class="form__legend fancybox__title">Позвоните мне</legend>
+		<div class="form__row">
+			<label class="form__label">ВАШЕ ФИО</label>
+			<input type="text" name="fio" class="form__input" />
+		</div>
+		<div class="form__row">
+			<label class="form__label">ТЕЛЕФОН</label>
+			<input type="text" name="phone" class="form__input" />
+		</div>
+		<div class="form__row form__row_table">
+			<div class="form__cell">
+				<label class="form__label fancybox__label">введите код</label><div class="fancybox__image">
+					<img src="./images/capcha.jpg" alt="" />
+				</div>
+			</div>	
+			<div class="form__cell form__cell_35">
+				<input type="text" name="code" class="form__input" />
+			</div>
+		</div>
+		<div class="form__row form__row_center fancybox__button">
+			<input type="submit" name="submit" value="заказать звонок" class="form__submit" />
+		</div>
+	</form>
+</div>
+
+<div id="reg" style="width: 500px;">
+	<form action="#" class="form fancybox__content">
+		<a href="javascript:;" onclick="$.fancybox.close();" class="fancybox__close"></a>
+		<legend class="form__legend fancybox__title">Зарегистрироваться</legend>
+		<div class="form__row">
+			<label class="form__label">Ваш ник</label>
+			<input type="text" name="nikname" class="form__input" />
+		</div>
+		<div class="form__row">
+			<label class="form__label">ваш E-mail</label>
+			<input type="text" name="mail" class="form__input" />
+		</div>
+		<div class="form__row">
+			<label class="form__check form__check_red form__ib">
+				<input type="checkbox" name="confirmation" class="form__check-input" checked />
+				<span class="fancybox__check">Подтверждаю свое согласие на обработку и хранение моих персональных данных в соответствии с пользовательским соглашением</span>
+			</label>
+		</div>
+		<div class="form__row form__row_center fancybox__button">
+			<input type="submit" name="submit" value="ЗАрегистрироваться" class="form__submit" />
+		</div>
+	</form>
+</div>
+
+
+<div id="login" style="width: 500px;">
+	<form action="#" class="form fancybox__content">
+		<a href="javascript:;" onclick="$.fancybox.close();" class="fancybox__close"></a>
+		<legend class="form__legend fancybox__title">Вход</legend>
+		<div class="form__row">
+			<label class="form__label">Ваш ЛОГИН</label>
+			<input type="text" name="login" class="form__input" />
+		</div>
+		<div class="form__row">
+			<label class="form__label">ваш пароль</label>
+			<input type="password" name="password" class="form__input" />
+		</div>
+		<div class="form__row">
+			<div class="form__cell form__cell_50">
+				<a href="#" class="fancybox__pass">Забыли пароль?</a>
+			</div>
+			<div class="form__cell form__cell_50">
+				<label class="form__check form__check_red form__ib">
+					<input type="checkbox" name="confirmation" class="form__check-input" checked />
+					<span class="fancybox__check">запомнить меня</span>
+				</label>
+			</div>
+		</div>
+		<div class="form__row">
+			<div class="fancybox__or"></div>
+			<div class="fancybox__sotial">войти через соц.сети:</div>
+			<div class="fancybox__wrapper">
+				<img src="./images/sotial.jpg" alt="" />
+			</div>
+		</div>
+		<div class="form__row form__row_center fancybox__button">
+			<input type="submit" name="submit" value="войти" class="form__submit" />
+		</div>
+	</form>
+</div>
+
+
+{% set basket = {
+	"title": "Название товара",
+	"image": "./images/card.jpg",
+	"text": "Рыбные тексты также применяются для демонстрации различных видов шрифта и в разработке макетов. Как правило их содержание бессмысленно.",
+	"price": "250 000",
+	"count": "10",
+	"withThis": [
+		{"link": "#", "image": "./images/catalog1.png", "title": "Кирпич для живых  цветов \"VITAL\"", "price": "250 000", "type": "stock"},
+		{"link": "#", "image": "./images/catalog2.png", "title": "Кирпич для живых  цветов \"VITAL\"", "price": "250 000"},
+		{"link": "#", "image": "./images/catalog3.png", "title": "Кирпич для живых  цветов \"VITAL\"", "price": "250 000", "type": "stock"},
+		{"link": "#", "image": "./images/catalog1.png", "title": "Кирпич для живых  цветов \"VITAL\"", "price": "250 000", "type": "stock"},
+		{"link": "#", "image": "./images/catalog2.png", "title": "Кирпич для живых  цветов \"VITAL\"", "price": "250 000"}
+	]
+}%}
+<div id="basket" style="width: 850px;">
+	<form action="#" class="form fancybox__content fancybox__content_small">
+		<a href="javascript:;" onclick="$.fancybox.close();" class="fancybox__close"></a>
+		<legend class="form__legend fancybox__title">Вы добавили в корзину</legend>
+		<table class="fancybox__card">
+			<tr>
+				<td class="fancybox__card-image">
+					<img src="{{ basket.image }}" alt="{{ basket.title }}" class="fancybox__card-img" />
+				</td>
+				<td class="fancybox__card-content">
+					<div class="fancybox__card-title">{{ basket.title }}</div>
+					<div class="fancybox__card-text">{{ basket.text }}</div>
+				</td>
+				<td class="fancybox__card-count">
+					<div class="fancybox__card-head">кол-во:</div>
+					{% set count = basket.count %}
+					{% include 'count.html' %}
+				</td>
+				<td class="fancybox__card-price">
+					<div class="fancybox__card-head">сумма:</div>
+					<div class="fancybox__card-total">{{ basket.price }}</div>
+				</td>
+			</tr>
+		</table>
+		<div class="form__row form__row_center">
+			<input type="submit" name="submit" value="оформить заказ" class="fancybox__submit" />
+			<a href="javascript:;" onclick="$.fancybox.close();" class="fancybox__submit fancybox__submit_close">ПРОДОЛЖИТЬ ПОКУПКИ</a>
+		</div>
+	</form>
+	<div class="fancybox__with-this">
+		<div class="fancybox__with-this-title">С этим товаром покупают</div>
+		<ul class="fancybox__with-this-list">
+			{% for item in basket.withThis -%}
+				<li class="fancybox__with-this-item {% if item.type %}fancybox__with-this-item_type_{{ item.type }}{% endif %}">
+					<a href="{{ item.link }}" class="fancybox__with-this-link">
+						<span class="fancybox__with-this-image">
+							<img src="{{ item.image }}" alt="{{ item.title }}" class="fancybox__with-this-img"/>
+						</span>
+						<span class="fancybox__with-this-name">{{ item.title }}</span>
+						<span class="fancybox__with-this-price">{{ item.price }}</span>
+					</a>
+				</li>
+			{%- endfor %}
+		</ul>
+	</div>
+</div>
+
+<div id="doc" style="width: 600px;">
+	<form action="#" class="form fancybox__content">
+		<a href="javascript:;" onclick="$.fancybox.close();" class="fancybox__close"></a>
+		<legend class="form__legend fancybox__title">Запрос на получение документов</legend>
+		<div class="form__row">
+			<label class="form__label">ВАШЕ Имя</label>
+			<input type="text" name="fio" class="form__input" />
+		</div>
+		<div class="form__row">
+			<label class="form__label">ваш ТЕЛЕФОН</label>
+			<input type="text" name="phone" class="form__input" />
+		</div>
+		<div class="form__row">
+			<label class="form__label">Текстовая информация</label>
+			<textarea name="text" class="form__textarea"></textarea>
+		</div>
+		<div class="form__row form__row_center fancybox__button">
+			<input type="submit" name="submit" value="Отправить" class="form__submit" />
+		</div>
+	</form>
+</div>
+
+<div id="post-success" style="width: 600px;">
+	<div class="form fancybox__content fancybox_success">
+		<a href="javascript:;" onclick="$.fancybox.close();" class="fancybox__close"></a>
+		<div class="form__legend fancybox__title">Спасибо!</div>
+		<div class="fancybox__text">Ваше письмо очень важно для нас. Рыбные тексты также применяются для демонстрации различных видов шрифта и в разработке макетов.</div>
+	</div>
+</div>
+
+<div id="review" style="width: 500px;">
+	<form action="#" class="form fancybox__content">
+		<a href="javascript:;" onclick="$.fancybox.close();" class="fancybox__close"></a>
+		<legend class="form__legend fancybox__title">Оставить отзыв</legend>
+		<div class="form__row">
+			<label class="form__label">ВАШЕ Имя</label>
+			<input type="text" name="fio" class="form__input" />
+		</div>
+		<div class="form__row">
+			<label class="form__label">Текст отзыва</label>
+			<textarea name="review" class="form__textarea" ></textarea>
+		</div>
+		<div class="form__row form__row_table">
+			<div class="form__cell">
+				<label class="form__label fancybox__label">введите код</label><div class="fancybox__image">
+					<img src="./images/capcha.jpg" alt="" />
+				</div>
+			</div>	
+			<div class="form__cell form__cell_35">
+				<input type="text" name="code" class="form__input" />
+			</div>
+		</div>
+		<div class="form__row form__row_center fancybox__button">
+			<input type="submit" name="submit" value="Отправить" class="form__submit" />
+		</div>
+	</form>
+</div>

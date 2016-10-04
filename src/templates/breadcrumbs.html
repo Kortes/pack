@@ -1,0 +1,20 @@
+{% set breadcrumbs = [
+	{"link": "#", "title": "упаковки"},
+	{"title": "джутовое полотно"}
+]%}
+
+<ul class="breadcrumbs">
+	<li class="breadcrumbs__item breadcrumbs__item_home">
+		<a href="/" class="breadcrumbs__link"></a>
+	</li>
+	{% for item in breadcrumbs %}
+		<li class="breadcrumbs__item breadcrumbs__item_separator"></li>
+		<li class="breadcrumbs__item">
+			{% if item.link %}
+				<a href="{{ item.link }}" class="breadcrumbs__link">{{ item.title }}</a>
+			{% else %}
+				<span class="breadcrumbs__current">{{ item.title }}</span>
+			{% endif %}
+		</li>
+	{% endfor %}
+</ul>

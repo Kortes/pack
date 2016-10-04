@@ -1,0 +1,142 @@
+@import "../main/var";
+
+.filter{
+	display: block;
+	margin-bottom: 25px;
+	border-top: 1px solid @c-border;
+	border-bottom: 1px solid @c-border;
+	padding-top: 15px;
+	font-family: 'lato', Arial, sans-serif;
+
+	&__right{
+		float:right;
+		width: 280px;
+	}
+
+	&__content{
+		padding-right: 280px;
+		font-size: 0;
+	}
+
+	&__item{
+		font-size: 13px;
+		display: inline-block;
+		margin: 0 15px 15px 0;
+		vertical-align: top;
+
+		&-button{
+			display: block;
+			line-height: 20px;
+			border: 1px solid @c-border;
+			border-radius: 12px;
+			padding: 0 30px 2px 15px;
+			color: @c-title;
+			position: relative;
+			cursor: pointer;
+
+			&:before{
+				content: "";
+				position: absolute;
+				top: 50%;
+				right: 12px;
+				transform: translateY(-50%);
+				border-top: 4px solid @c-red;
+				border-left: 4px solid transparent;
+				border-right: 4px solid transparent;
+			}
+		}
+	}
+
+	&__stock{
+		display: inline-block;
+		margin: 0 15px 15px 0;
+		vertical-align: top;
+
+		&-button{
+			display: block;
+			line-height: 22px;
+			font-size: 11px;
+			font-weight: 600;
+			text-transform: uppercase;
+			border: 1px solid @c-border;
+			border-radius: 12px;
+			padding: 0 15px;
+			color: @c-title;
+			cursor: pointer;
+		}
+	}
+
+	&__type{
+		display: inline-block;
+		vertical-align: top;
+
+		&-button{
+			display: inline-block;
+			vertical-align: top;
+			margin-right: 5px;
+			width: 23px;
+			height: 23px;
+			border: 1px solid transparent;
+			border-radius: 12px;
+			cursor: pointer;
+			background: url(../images/filter-ico.png) no-repeat center;
+
+			&_claster{
+				background-position: top center;
+			}
+
+			&_list{
+				background-position: bottom center;
+			}
+		}
+	}
+
+	&__show{
+		margin-left: 7px;
+		color: @c-title;
+		font-size: 0;
+
+		&-title{
+			font-size: 13px;
+			vertical-align: baseline;
+		}
+
+		&-button{
+			margin-left: 15px;
+			font-size: 14px;
+			font-weight: 600;
+			line-height: 1;
+			display: inline-block;
+			vertical-align: baseline;
+			color: @c-grey;
+			border-bottom: 1px dotted @c-grey;
+			cursor: pointer;
+		}
+	}
+
+	&__input{
+		display: none;
+
+		&:checked{
+			& + .filter__item-button:before{
+				border-bottom: 4px solid @c-red;
+				border-top: none;
+			}
+
+			& + .filter__stock-button{
+				color: @c-white;
+				background: @c-red;
+				border-color: @c-red;
+			}
+
+			& + .filter__type-button{
+				border-color: @c-red;
+			}
+
+			& + .filter__show-button{
+				border-color: transparent;
+				color: @c-title;
+			}
+		}
+	}
+}

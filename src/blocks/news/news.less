@@ -1,0 +1,80 @@
+@import "../main/var";
+
+.news{
+	font-family: 'lato', Arial, sans-serif;
+
+	&__tags{
+		margin: -10px 0 30px;
+	}
+
+	&__tag{
+		margin-right: 15px;
+		display: inline-block;
+		vertical-align: top;
+
+		&-input{
+			display: none;
+
+			&:checked + .news__tag-buttom{
+				background: @c-border;
+			}
+		}
+
+		&-buttom{
+			display: block;
+			border: 1px solid @c-border;
+			line-height: 20px;
+			padding: 0 15px;
+			color: @c-title;
+			font-size: 13px;
+			border-radius: 11px;
+		}
+	}
+
+	&__list{
+		margin: 0 -10px;
+	}
+
+	&__item{
+		display: inline-block;
+		vertical-align: top;
+		width: 230px;
+		margin: 0 10px 40px;
+	}
+
+	&__link{
+		display: block;
+		text-decoration: none !important;
+		color: @c-text;
+	}
+
+	&__image{
+		display: block;
+		height: 170px;
+		overflow: hidden;
+		border-radius: 5px 5px 0 0;
+		position: relative;
+	}
+
+	&__img{
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+	}
+
+	&__title{
+		padding: 25px 0 15px;
+		display: block;
+		font-weight: 600;
+		color: @c-title;
+		font-size: 16px;
+		line-height: 18px;
+	}
+
+	&__text{
+		display: block;
+		font-family: 'playfair_display';
+		line-height: 18px;
+	}
+}

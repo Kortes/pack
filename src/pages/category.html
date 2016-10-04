@@ -1,0 +1,57 @@
+{% extends "base.html" %}
+
+{% set catalog = {
+	"title": "Упаковки для цветов",
+	"list": [
+		{"title": "Мишка-конструктор  с основой. Оазис", "link": "#", "image": "images/goods.jpg", "text": "Рыбное описание товара Рыбное описание товара", "price": "250 000", "oldprice": "260 000", "count": "987", "type": "new" },
+		{"title": "Мишка-конструктор  с основой. Оазис", "link": "#", "image": "images/goods.jpg", "text": "Рыбное описание товара Рыбное описание товара", "price": "250 000", "oldprice": "260 000" },
+		{"title": "Мишка-конструктор  с основой. Оазис", "link": "#", "image": "images/goods.jpg", "text": "Рыбное описание товара Рыбное описание товара", "price": "250 000", "oldprice": "260 000", "count": "987", "type": "new" },
+		{"title": "Мишка-конструктор  с основой. Оазис", "link": "#", "image": "images/goods.jpg", "text": "Рыбное описание товара Рыбное описание товара", "price": "250 000", "oldprice": "260 000" },
+		{"title": "Мишка-конструктор  с основой. Оазис", "link": "#", "image": "images/goods.jpg", "text": "Рыбное описание товара Рыбное описание товара", "price": "250 000", "oldprice": "260 000", "count": "987", "type": "new" },
+		{"title": "Мишка-конструктор  с основой. Оазис", "link": "#", "image": "images/goods.jpg", "text": "Рыбное описание товара Рыбное описание товара", "price": "250 000", "oldprice": "260 000" },
+		{"title": "Мишка-конструктор  с основой. Оазис", "link": "#", "image": "images/goods.jpg", "text": "Рыбное описание товара Рыбное описание товара", "price": "250 000", "oldprice": "260 000", "count": "987", "type": "new" },
+		{"title": "Мишка-конструктор  с основой. Оазис", "link": "#", "image": "images/goods.jpg", "text": "Рыбное описание товара Рыбное описание товара", "price": "250 000", "oldprice": "260 000" },
+		{"title": "Мишка-конструктор  с основой. Оазис", "link": "#", "image": "images/goods.jpg", "text": "Рыбное описание товара Рыбное описание товара", "price": "250 000", "oldprice": "260 000", "count": "987", "type": "new" },
+		{"title": "Мишка-конструктор  с основой. Оазис", "link": "#", "image": "images/goods.jpg", "text": "Рыбное описание товара Рыбное описание товара", "price": "250 000", "oldprice": "260 000" },
+		{"title": "Мишка-конструктор  с основой. Оазис", "link": "#", "image": "images/goods.jpg", "text": "Рыбное описание товара Рыбное описание товара", "price": "250 000", "oldprice": "260 000", "count": "987", "type": "new" },
+		{"title": "Мишка-конструктор  с основой. Оазис", "link": "#", "image": "images/goods.jpg", "text": "Рыбное описание товара Рыбное описание товара", "price": "250 000", "oldprice": "260 000" }]
+}%}
+
+{% block title %}{{ page.title }}{% endblock %}
+
+{% block content %}
+	<div class="page__container clearfix">
+		<div class="page__aside">
+			{% include 'left-menu.html' %}
+		</div>
+		<div class="page__content page__content_less_botton">
+			{% include 'breadcrumbs.html' %}
+		
+			<div class="text">
+				<div class="h1">{{ catalog.title }}</div>
+
+				{% include 'category.html'%}
+				{% include 'filter.html'%}
+
+				<div class="product__wrapper">
+					{% for item in catalog.list %}
+						{% set product = item %}
+						{% include 'product.html' %}
+					{% endfor %}
+				</div>
+			</div>
+			{% include 'pagination.html'%}
+		</div>
+	</div>
+	<div class="panel panel_grey">
+		<div class="page__container clearfix">
+			<div class="page__content">
+				<h1>{{ page.title }}</h1>
+				<div class="text">
+					{{ page.text }}
+					{% include 'sotial.html' %}
+				</div>
+			</div>
+		</div>
+	</div>
+{% endblock %}

@@ -1,0 +1,68 @@
+@import "../main/var";
+
+@height: 480px;
+
+.carousel{
+	height: @height;
+	overflow: hidden;
+	position: relative;
+
+	&__list{
+		z-index: 0;
+		height: @height;
+		position: absolute;
+		width: 100%;
+		top: 0;
+	}
+
+	&__control{
+		position: relative;
+		z-index: 1;
+		height: 0;
+	}
+
+	&__item{
+		height: @height;
+		width: 100%;
+		overflow: hidden;
+	}
+
+	&__link{
+		position: absolute;
+		top: 0;
+		bottom: 0;
+		left: 0;
+		right: 0;
+	}
+
+	&__image{
+		position: absolute;
+		left: 50%;
+		top: 50%;
+		transform: translate(-50%, -50%);
+	}
+
+	&__arrow{
+		position: absolute;
+		z-index: 10;
+		top: @height * 0.5;
+		width: 36px;
+		height: 36px;
+		transform: translateY(-50%);
+		background: url(../images/carousel-arrow.png) no-repeat;
+
+		&_prev{
+			left: 0;
+			background-position: top left;
+		}
+
+		&_next{
+			right: 0;
+			background-position: top right;
+		}
+
+		&:hover{
+			opacity: 0.8;
+		}
+	}
+}

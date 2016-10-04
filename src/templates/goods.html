@@ -1,0 +1,14 @@
+<div class="goods">
+	<div class="page__container">
+		<div class="goods__head">
+			<div class="goods__title">{{ goods.title }}</div>
+			<a href="{{ goods.link }}" class="goods__link">Смотреть все</a>
+		</div>
+		<ul class="goods__content">
+			{% for item in goods.list %}
+				{% set product = item %}
+				{% include 'product.html' %}
+			{% endfor %}
+		</ul>
+	</div>
+</div>

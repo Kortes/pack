@@ -1,0 +1,116 @@
+@import "../main/var";
+
+.catalog{
+	&__head{
+		border-bottom: 1px solid @c-border;
+		padding: 25px 0;
+	}
+
+	&__title{
+		float: left;
+		text-transform: uppercase;
+		font-size: 16px;
+		font-weight: 600;
+		color: @c-text-dark;
+	}
+
+	&__menu{
+		overflow: hidden;
+		display: flex;
+		justify-content: space-around;
+
+		&-link{
+			font-weight: 600;
+			text-decoration: underline;
+			color: @c-red;
+
+			&:hover{
+				text-decoration: none;
+			}
+		}
+	}
+
+	&__list{
+		margin: 0 -20px;
+		padding: 20px 0;
+	}
+
+	&__item{
+		display: inline-block;
+		vertical-align: top;
+		margin-bottom: 20px;
+		width: 164px;
+		padding: 20px;
+
+		&:hover{
+			background: @c-bg-purpur;
+			color: @c-white;
+
+			a{
+				color: @c-white;
+			}
+		}
+
+		&-title{
+			display: block;
+			color: lighten(@c-title, 6.5%);
+			font-weight: 600;
+			text-transform: uppercase;
+			font-size: 13px;
+			line-height: 1.2;
+		}
+
+		&-wrapper{
+			height: 70px;
+			display: block;
+			position: relative;
+		}
+
+		&-image{
+			position: absolute;
+			top: 0;
+			bottom: 0;
+			left: 0;
+			margin: auto;
+			max-height: 70px;
+			height: auto;
+			max-width: 100%;
+			width: auto;
+		}
+
+		&-name{
+			display: block;
+			height: 45px;
+			overflow: hidden;
+		}
+	}
+
+	&__sublist{
+		font-size: 13px;
+		line-height: 25px;
+		margin: 5px 0 15px;
+	}
+
+	&__subitem{
+		white-space: nowrap;
+		overflow: hidden;
+		text-overflow: ellipsis;
+		color: @c-grey;
+
+		&-link{
+			color: @c-grey;
+		}
+	}
+
+	&__more{
+		display: inline-block;
+		color: @c-more !important;
+		font-size: 12px;
+		text-transform: capitalize;
+		text-decoration: none !important;
+		line-height: 18px;
+		padding: 0 12px;
+		border: 1px solid @c-more;
+		border-radius: 10px;
+	}
+}

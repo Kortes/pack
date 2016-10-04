@@ -1,0 +1,37 @@
+@import "../main/var";
+
+.viewed{
+	padding-top: 35px;
+
+	&__head{
+		padding: 0 10px 30px;
+	}
+
+	&__inner{
+		background: @c-bg-grey;
+		padding: 20px 0 25px;
+		background: linear-gradient(to bottom,darken(@c-bg-grey, 12.5%) 0%, @c-bg-grey 30px, @c-bg-grey 100%); 
+	}
+
+	&__title{
+		display: inline-block;
+		line-height: 35px;
+		border-right: 2px solid darken(@c-border, 9.5%);
+		padding-right: 30px;
+		margin-right: 30px;
+		font-size: 16px;
+		font-weight: 600;
+		color: @c-title;
+	}
+
+	&__link{
+		font-size: 12px;
+		color: darken(@c-border, 9.5%);
+	}
+
+	&__content{
+		margin: 0 -20px;
+		padding: 0 10px;
+		font-size: 0;
+	}
+}

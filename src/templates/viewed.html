@@ -1,0 +1,18 @@
+<div class="viewed">
+	<div class="page__container">
+		<div class="viewed__head">
+			<div class="viewed__title">{{ viewed.title }}</div>
+			<a href="{{ viewed.link }}" class="viewed__link">Смотреть все</a>
+		</div>
+	</div>
+	<div class="viewed__inner">
+		<div class="page__container">
+			<ul class="viewed__content">
+				{% for item in viewed.list %}
+					{% set product = item %}
+					{% include 'product.html' %}
+				{% endfor %}
+			</ul>
+		</div>
+	</div>
+</div>

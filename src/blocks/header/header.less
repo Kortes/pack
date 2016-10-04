@@ -1,0 +1,276 @@
+@import "../main/var";
+
+.header{
+	padding-top: 50px;
+
+	&__fixed{
+		position: fixed;
+		top: 0;
+		left: 0;
+		width: 100%;
+		z-index: 1000;
+	}
+
+	&__top{
+		display: table;
+		width: 100%;
+		color: @c-white;
+	}
+
+	&__mode{
+		label{
+			display: inline-block;
+			white-space: nowrap;
+			font-size: 9px;
+			font-weight: 600;
+			text-transform: uppercase;
+			line-height: 26px;
+			padding: 0 12px;
+			border: 2px solid #a09da6;
+			border-radius: 15px;
+			background: none;
+			color: @c-white;
+			cursor: pointer;
+		}
+
+		input:checked + label{
+			color: @c-purpur;
+			background: @c-white;
+			border-color: @c-white;
+		}
+	}
+
+	&__phone{
+		display: inline-block;
+		padding-left: 25px;
+		position: relative;
+		white-space: nowrap;
+
+		&:before{
+			content: "";
+			position: absolute;
+			left: 0;
+			top: 4px;
+			width: 15px;
+			height: 17px;
+			background: url(../images/phone.png) no-repeat;
+		}
+	}
+
+	&__call{
+		display: inline-block;
+		white-space: nowrap;
+		text-decoration: none !important;
+		line-height: 1.1;
+		color: @c-white;
+		border-bottom: 1px dotted @c-white;
+	}
+
+	&__cell{
+		display: table-cell;
+		height: 40px;
+		vertical-align: middle;
+		padding: 5px;
+
+		&:first-child{
+			padding-left: 0;
+		}
+
+		&:last-child{
+			padding-right: 0;
+		}
+
+		&_type_address{
+			line-height: 16px;
+			font-size: 12px;
+			width: 30%;
+		}
+
+		&_type_mode{
+			width: 140px;
+		}
+
+		&_type_call{
+			width: 110px;
+		}
+
+		&_type_phone{
+			width: 170px;
+			text-align: right;
+		}
+	}
+
+	&__content{
+		padding: 15px 0;
+	}
+
+	&__account{
+		float:right;
+		white-space: nowrap;
+	}
+
+	&__logo{
+		float: left;
+		width: 130px;
+	}
+
+	&__search{
+		overflow: hidden;
+		padding: 15px 30px 10px;
+		position: relative;
+
+		&-input{
+			width: 100%;
+			padding: 5px 35px 5px 10px;
+			line-height: 28px;
+			border-radius: 5px;
+			border: 1px solid @c-border;
+
+			&::-ms-clear {
+				display: none;
+			}
+
+			&::-webkit-search-decoration,
+			&::-webkit-search-cancel-button,
+			&::-webkit-search-results-button,
+			&::-webkit-search-results-decoration { 
+			    display: none; 
+			}
+		}
+
+		&-button{
+			width: 30px;
+			height: 40px;
+			position: absolute;
+			top: 15px;
+			right: 30px;
+			border: none;
+			border-radius: 0 5px 5px 0;
+			background: url(../images/search.png) no-repeat center left;
+			cursor: pointer;
+		}
+	}
+
+	&__basket{
+		display: inline-block;
+		vertical-align: top;
+		padding: 10px 0 0 26px;
+		min-height: 60px;
+		background: url(../images/basket.png) no-repeat left center;
+
+		&-wrapper{
+			margin-left: 20px;
+			border-collapse: separate !important;
+
+			th{
+				font-size: 10px;
+				line-height: 1.2;
+				color: @c-grey;
+				padding: 0 5px 5px;
+				text-align: left;
+			}
+
+			td{
+				padding: 5px;
+				height: 14px;
+				line-height: 1;
+				text-align: center;
+
+				&:first-child{
+					border-radius: 4px 0 0 4px;
+					background: @c-red;
+					color: @c-white;
+					border: 1px solid @c-red;
+				}
+
+				&:last-child{
+					border-radius: 0 4px 4px 0;
+					border: 1px solid @c-border;
+				}
+			}
+		}
+
+		&-count{
+			position: relative;
+			display: inline-block;
+		}
+
+		&-popup{
+			position: absolute;
+			top: 100%;
+			left: 50%;
+			color: @c-white;
+			transform: translate(-50%, 20px);
+			padding: 15px 20px 15px 50px;
+			border-radius: 4px;
+			font-size: 13px;
+			line-height: 16px;
+			text-align: left;
+			background: @c-red url(../images/popup.png) no-repeat 15px 20px;
+			filter: drop-shadow(1px 2px 10px fade(#000, 22%));
+			border: 1px solid @c-white;
+			display: none;
+
+			&:before{
+				content: "";
+				position: absolute;
+				bottom: 100%;
+				left: 50%;
+				border-left: 10px solid transparent;
+				border-right: 10px solid transparent;
+				border-bottom: 10px solid @c-white;
+				margin-left: -10px;
+			}
+
+			&:after{
+				content: "";
+				position: absolute;
+				bottom: 100%;
+				left: 50%;
+				border-left: 8px solid transparent;
+				border-right: 8px solid transparent;
+				border-bottom: 8px solid @c-red;
+				margin-left: -8px;
+			}
+		}
+	}
+
+	&__profile{
+		display: inline-block;
+		vertical-align: top;
+		overflow: hidden;
+		white-space: nowrap;
+		margin-right: 20px;
+		max-width: 150px;
+	}
+
+	&__login{
+		padding-top: 15px;
+		line-height: 40px;
+		color: @c-text-dark;
+
+		a{
+			color: @c-text-dark;
+		}
+	}
+
+	&__logout{
+		padding-top: 15px;
+		color: @c-text-dark;
+	}
+
+	&__name{
+		overflow: hidden;
+		text-overflow: ellipsis;
+		white-space: nowrap;
+		line-height: 1.2;
+	}
+
+	&__exit{
+		display: inline-block;
+		line-height: 1;
+		color: @c-grey;
+		border-bottom: 1px dotted @c-grey;
+		text-decoration: none !important;
+	}
+}

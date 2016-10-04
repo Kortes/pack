@@ -1,0 +1,57 @@
+{% extends "base.html" %}
+
+{% set contact = {
+	"title": "Контакты",
+	"phone": [
+		{"number": "+7-900-700-20-40", "position": "менеджер"},
+		{"number": "245-18-45", "position": "главный офис"}
+	],
+	"address": "г. Москва, проспект Ленина, д 24,<br>офис 404",
+	"mail": [ "menager-upakovka@mail.ru", "upakovka@mail.ru"]
+}%}
+
+{% block title %}{{ page.title }}{% endblock %}
+
+{% block content %}
+	<div class="contact">
+		<div class="page__container">
+			{% include 'breadcrumbs.html' %}
+			<h1 class="contact__title">{{ contact.title }}</h1>
+			<div class="contact__row">
+				<div class="contact__cell">
+					<div class="contact__name contact__name_phone">Наши телефоны</div>
+					<div class="contact__content text">
+						{% for item in contact.phone %}
+							<div>{{ item.number }} – {{ item.position }}</div>
+						{% endfor %}
+					</div>
+				</div>
+				<div class="contact__cell">
+					<div class="contact__name contact__name_address">Наши адреса</div>
+					<div class="contact__content text">
+						<div>{{ contact.address | safe }}</div>
+					</div>
+				</div>
+				<div class="contact__cell">
+					<div class="contact__name contact__name_mail">Почтовые ящики</div>
+					<div class="contact__content text">
+						{% for item in contact.mail %}
+							<div><a href="mailto:{{item}}" class="contact__mail">{{ item }}</a></div>
+						{% endfor %}
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="map" id="map"></div>
+	<div class="page__container">
+		{% include 'post.html' %}
+		<div class="contact__sotial">
+			{% include 'sotial.html' %}
+		</div>
+	</div>
+{% endblock %}
+
+{% block script %}
+	<script src="https://api-maps.yandex.ru/2.1/?lang=ru_RU" type="text/javascript"></script>
+{% endblock %}

@@ -1,0 +1,496 @@
+@import "../main/var";
+
+.card{
+	padding-top: 70px;
+
+	&__title{
+		text-transform: uppercase;
+		font-size: 36px;
+		letter-spacing: 4px;
+		margin-bottom: 20px;
+	} 
+
+	&__body{
+		padding-bottom: 40px;
+	}
+
+	&__image{
+		float:left;
+		width: 460px;
+		height: 560px;
+		border: 1px solid @c-border;
+		position: relative;
+	}
+
+	&__img{
+		position: absolute;
+		top: 0;
+		bottom: 0;
+		left: 0;
+		right: 0;
+		margin: auto;
+		width: auto;
+		height: auto;
+		max-width: 460px;
+		max-height: 560px;
+	}
+
+	&__content{
+		padding-left: 500px;
+	}
+
+	&__articul{
+		color: @c-grey;
+		font-size: 12px;
+		width: 40%;
+		box-sizing: border-box;
+		display: inline-block;
+
+		&-value{
+			color: @c-title;
+			font-size: 14px;
+			font-weight: 600;
+		}
+	}
+
+	&__count{
+		width: 60%;
+		box-sizing: border-box;
+		display: inline-block;
+
+		&-text{
+			display: inline-block;
+			vertical-align: top;
+			line-height: 24px;
+			font-size: 13px;
+			color: @c-green;
+			padding: 0 15px 0 20px;
+			position: relative;
+
+			&:before{
+				content:"";
+				position: absolute;
+				left: 0;
+				top: 6px;
+				width: 10px;
+				height: 10px;
+				border: 1px solid @c-border;
+				border-radius: 50%;
+			}
+
+			&:after{
+				content:"";
+				position: absolute;
+				left: 0;
+				top: 0px;
+				width: 20px;
+				height: 20px;
+				background: url(../images/product-ico.png) no-repeat top left;
+			}
+
+			&_no{
+				color: @c-red;
+
+				&:after{
+					background-position: bottom left;
+				}
+			}
+		}
+	}
+
+	&__price{
+		color: @c-grey;
+		font-size: 12px;
+		font-weight: 600;
+
+		&-wrapper,
+		&-current{
+			display: inline-block;
+			vertical-align: top;
+		}
+
+		&-inner{
+			padding: 5px 0 25px;
+		}
+
+		&-wrapper{
+			padding-right: 70px;
+			text-align: center;
+		}
+
+		&-old{
+			font-size: 20px;
+			display: inline-block;
+			white-space: nowrap;
+			padding: 0 10px;
+			position: relative;
+
+			&:before{
+				content: "P ";
+				font-weight: 200;
+			}
+
+			&:after{
+				content: "_";
+				font-weight: 200;
+				position: absolute;
+				top: -6px;
+				left: 10px;
+			}
+
+			span{
+				font-weight: 700;
+
+				&:before{
+					content: "";
+					position: absolute;
+					top: 50%;
+					margin-top: -2px;
+					left: 0;
+					right: 0;
+					height: 1px;
+					background: @c-grey;
+				}
+			}
+		}
+
+		&-sale{
+			line-height: 22px;
+			font-size: 14px;
+			font-weight: 400;
+			text-transform: uppercase;
+			padding: 0 15px;
+			border-radius: 4px;
+			color: @c-white;
+			background: @c-purpur;
+		}
+
+		&-current{
+			font-size: 50px;
+			line-height: 1;
+			font-weight: 700;
+			color: @c-title;
+			position: relative;
+			margin: 10px 0;
+
+			&:before{
+				content: "P ";
+				font-weight: 200;
+			}
+
+			&:after{
+				content: "_";
+				font-weight: 200;
+				position: absolute;
+				top: -14px;
+				left: 0;
+			}
+		}
+
+	}
+
+	&__button{
+		border: 2px solid @c-red;
+		display: inline-block;
+		border-radius: 29px;
+		line-height: 54px;
+		padding: 0 60px;
+		font-size: 18px;
+		font-weight: 500;
+		text-transform: uppercase;
+		color: @c-red;
+		text-decoration: none !important;
+
+		&_buy{
+			background: @c-red;
+			color: @c-white;
+		}
+	}
+
+	&__info{
+		background: @c-bg-grey;
+		margin: 0 -20px;
+		border-radius: 4px;
+		padding: 30px 20px 20px;
+	}
+
+	&__with-this{
+		float: left;
+		width: 460px;
+
+		&-title{
+			color: @c-title;
+			font-weight: 600;
+			font-size: 16px;
+			padding-bottom: 25px;
+		}
+
+		&-list{
+			margin: 0 -10px;
+		}
+
+		&-item{
+			margin: 0 10px;
+			display: inline-block;
+			vertical-align: top;
+			width: 140px;
+			background: @c-white;
+			box-sizing: border-box;
+			padding: 20px 15px;
+			border: 1px dotted @c-border;
+			position: relative;
+
+			&:hover{
+				border-color: transparent;
+				box-shadow: 1px 2px 10px rgba(0, 0, 0, 0.15);
+			}
+
+			&_type_new:before{
+				content: "НОВИНКА";
+				position: absolute;
+				top: 20px;
+				left: 0;
+				background: @c-white;
+				z-index: 1;
+				padding: 0 20px;
+				color: @c-green;
+				font-weight: 600;
+				font-size: 10px;
+				line-height: 22px;
+			}
+
+			&_type_stock:before{
+				content: "АКЦИЯ";
+				position: absolute;
+				top: 20px;
+				left: 0;
+				background: @c-white;
+				z-index: 1;
+				padding: 0 20px;
+				color: @c-red;
+				font-weight: 600;
+				font-size: 10px;
+				line-height: 22px;
+			}
+		}
+
+		&-link{
+			display: block;
+			text-decoration: none !important;
+			color: @c-text;
+		}
+
+		&-image{
+			display: block;
+			position: relative;
+			height: 150px;
+		}
+
+		&-img{
+			position: absolute;
+			top: 0;
+			bottom: 0;
+			left: 0;
+			right: 0;
+			margin: auto;
+			width: auto;
+			height: auto;
+			max-width: 100%;
+			max-height: 150px;
+		}
+
+		&-name{
+			display: block;
+			overflow: hidden;
+			font-size: 12px;
+			font-weight: 600;
+			line-height: 18px;
+			height: 36px;
+			margin: 5px 0 10px;
+		}
+
+		&-price{
+			position: relative;
+			color: @c-title;
+			font-weight: 600;
+			font-size: 16px;
+
+			&:before{
+				content: "P ";
+				font-weight: 200;
+			}
+
+			&:after{
+				content: "_";
+				font-weight: 200;
+				position: absolute;
+				top: -9px;
+				left: 0;
+			}
+		}
+	}
+
+	&__review{
+		padding: 0 60px 0 500px;
+
+		&-item{
+			width: 100%;
+		}
+
+		&-title{
+			color: @c-title;
+			font-weight: 600;
+			font-size: 16px;
+			padding-bottom: 25px;
+		}
+
+		&-profile{
+			display: table;
+			width: 100%;
+		}
+
+		&-image{
+			display: table-cell;
+			vertical-align: middle;
+			width: 85px;
+		}
+
+		&-img{
+			border-radius: 50%;
+			width: 66px;
+			height: 66px;
+		}
+
+		&-description{
+			display: table-cell;
+			vertical-align: middle;
+		}
+
+		&-name{
+			font-size: 12px;
+			margin-bottom: 5px;
+			color: @c-grey;
+		}
+
+		&-position{
+			font-size: 11px;
+			line-height: 14px;
+		}
+
+		&-text{
+			margin-top: 15px;
+			position: relative;
+			background: @c-white;
+			font-size: 12px;
+			line-height: 19px;
+			padding: 15px 20px;
+			border: 1px solid lighten(@c-grey, 20%);
+			border-radius: 20px;
+
+			&:before{
+				content: "";
+				position: absolute;
+				left: 80px;
+				top: -11px;
+				width: 15px;
+				height: 11px;
+				background: url(../images/review.png) no-repeat;
+			}
+		}
+
+		&-bottom{
+			padding-top: 20px;
+		}
+
+		&-button{
+			display: inline-block;
+			vertical-align: top;
+			line-height: 30px;
+			border: 2px solid @c-red;
+			border-radius: 17px;
+			padding: 0 25px;
+			font-size: 12px;
+			font-weight: 500;
+			text-transform: uppercase;
+			color: @c-red;
+			text-decoration: none !important;
+		}
+
+		&-controls{
+			float:right;
+			margin:0 50px;
+			white-space: nowrap;
+		}
+
+		&-arrow{
+			display: inline-block;
+			vertical-align: top;
+			width: 15px;
+			height: 34px;
+			position: relative;
+
+			&:before{
+				content: "";
+				border-left: 3px solid @c-grey;
+				border-bottom: 3px solid @c-grey;
+				width: 8px;
+				height: 8px;
+				display: block;
+				position: absolute;
+				top: 50%;
+				left: 50%;
+				margin: -5px 0 0 -5px;
+			}
+
+			&_prev:before{
+				transform: rotate(45deg);
+			}
+
+			&_next:before{
+				transform: rotate(-135deg);
+			}
+		}
+
+		&-points{
+			display: inline-block;
+			vertical-align: top;
+		}
+
+		&-point{
+			display: inline-block;
+			vertical-align: top;
+			height: 34px;
+			width: 16px;
+			position: relative;
+
+			&:before{
+				content: "";
+				position: absolute;
+				top: 50%;
+				left: 50%;
+				margin: -3px 0 0 -3px;
+				border: 1px solid @c-grey;
+				width: 4px;
+				height: 4px;
+				border-radius: 3px;
+			}
+
+			&_active:before{
+				background: @c-grey;
+			}
+		}
+	}
+
+	&__notify{
+		display: inline-block;
+		vertical-align: top;
+		line-height: 20px;
+		margin-top: 20px;
+		border-radius: 11px;
+		padding: 0 20px;
+		font-size: 12px;
+		color: @c-white;
+		background: @c-red;
+		text-decoration: none !important;
+	}
+}

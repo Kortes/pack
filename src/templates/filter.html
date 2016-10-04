@@ -1,0 +1,51 @@
+<form class="filter" action="#" method="post">
+	<div class="filter__inner">
+		<div class="filter__right">
+			<div>
+				<div class="filter__stock">
+					<input type="checkbox" class="filter__input" id="stock" checked/>
+					<label class="filter__stock-button" for="stock">все акционные товары</label>
+				</div>
+				<div class="filter__type">
+					<input type="radio" class="filter__input" id="claster" name="type"/>
+					<label class="filter__type-button filter__type-button_claster" for="claster"></label>
+					<input type="radio" class="filter__input" id="list" name="type" checked  />
+					<label class="filter__type-button filter__type-button_list" for="list"></label>
+				</div>
+			</div>
+			<div class="filter__show">
+				<span class="filter__show-title">Показывать по:</span> 
+				<input type="radio" class="filter__input" id="show20" name="show"/>
+				<label class="filter__show-button" for="show20">20</label>
+				<input type="radio" class="filter__input" id="show60" name="show" checked />
+				<label class="filter__show-button" for="show60">60</label>
+				<input type="radio" class="filter__input" id="show100" name="show"/>
+				<label class="filter__show-button" for="show100">100</label>
+				<input type="radio" class="filter__input" id="show500" name="show"/>
+				<label class="filter__show-button" for="show500">500</label>
+			</div>
+		</div>
+		<div class="filter__content">
+			<div class="filter__item">
+				<input type="checkbox" class="filter__input" id="popular"/>
+				<label class="filter__item-button" for="popular">по популярности</label>
+			</div>
+			<div class="filter__item">
+				<input type="checkbox" class="filter__input" id="price"/>
+				<label class="filter__item-button" for="price">по цене</label>
+			</div>
+			<div class="filter__item">
+				<input type="checkbox" class="filter__input" id="name"/>
+				<label class="filter__item-button" for="name">по названию</label>
+			</div>
+			<div class="filter__item">
+				<input type="checkbox" class="filter__input" id="rating"/>
+				<label class="filter__item-button" for="rating">по рейтингу</label>
+			</div>
+			<div class="filter__item">
+				<input type="checkbox" class="filter__input" id="new"/>
+				<label class="filter__item-button" for="new">по новинкам</label>
+			</div>
+		</div>
+	</div>
+</form>

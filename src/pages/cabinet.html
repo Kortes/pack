@@ -1,0 +1,117 @@
+{% extends "base.html" %}
+
+{% block content %}
+	<div class="cabinet">
+		<div class="page__container">
+			{% include 'breadcrumbs.html' %}
+			<div class="h1 cabinet__head">Личный кабинет</div>
+			<div class="cabinet__tab">
+				<div class="cabinet__tab-item">
+					<input type="radio" class="cabinet__tab-input" value="ur" name="face" id="ur" checked/>
+					<label for="ur" class="cabinet__tab-label"><span>Для юридических лиц</span></label>
+				</div>
+				<div class="cabinet__tab-item">
+					<input type="radio" class="cabinet__tab-input" value="ur" name="face" id="fiz" />
+					<label for="fiz" class="cabinet__tab-label"><span>Для физических лиц</span></label>
+				</div>
+			</div>
+			<ul class="cabinet__breadcrumbs">
+				<li class="cabinet__breadcrumbs-item cabinet__breadcrumbs-item_active">
+					Регистрационные<br>данные
+				</li>
+				<li class="cabinet__breadcrumbs-item">
+					История<br>покупок
+				</li>
+				<li class="cabinet__breadcrumbs-item">
+					Запрос на получение<br>документов
+				</li>
+			</ul>
+			<form class="cabinet__form">
+				<div class="form__row form__row_table">
+					<div class="form__cell form__cell_70">
+						<label class="form__label">наименование юридического лица</label>
+						<input type="text" name="name" class="form__input" value="Вельмильгорская Нижне-Тагильская Корпорация Высоких Технологий" />
+					</div>
+					<div class="form__cell"></div>
+				</div>
+				<div class="form__row form__row_table">
+					<div class="form__cell form__cell_30">
+						<label class="form__label">город</label>
+						<input type="text" name="phone" class="form__input form__error" value="Москва" />
+					</div>
+					<div class="form__cell form__cell_30">
+						<label class="form__label">улица</label>
+						<input type="text" name="mail" class="form__input" value="Ленина"  />
+					</div>
+					<div class="form__cell form__cell_20">
+						<label class="form__label">Дом</label>
+						<input type="text" name="mail" class="form__input" />
+					</div>
+					<div class="form__cell form__cell_20">
+						<label class="form__label">корпус</label>
+						<input type="text" name="mail" class="form__input" />
+					</div>
+				</div>
+				<div class="form__row">
+					<label class="form__check form__check_red form__ib">
+						<input type="checkbox" name="payment" value="p1" class="form__check-input" checked />
+						<span>совпадает с адресом доставки</span>
+					</label>
+				</div>
+				<div class="form__row form__row_table">
+					<div class="form__cell form__cell_45">
+						<label class="form__label">огрн</label>
+						<input type="text" name="phone" class="form__input" />
+					</div>
+					<div class="form__cell form__cell_45">
+						<label class="form__label">инн</label>
+						<input type="text" name="mail" class="form__input" />
+					</div>
+					<div class="form__cell"></div>
+				</div>
+				<div class="form__row form__row_table">
+					<div class="form__cell form__cell_80">
+						<label class="form__label">банковские реквизиты</label>
+						<input type="text" name="name" class="form__input" />
+					</div>
+					<div class="form__cell"></div>
+				</div>
+				<div class="form__row form__row_table">
+					<div class="form__cell form__cell_45">
+						<label class="form__label">телефон</label>
+						<input type="text" name="phone" class="form__input" />
+					</div>
+					<div class="form__cell form__cell_45">
+						<label class="form__label">ответственное лицо</label>
+						<input type="text" name="mail" class="form__input" />
+					</div>
+					<div class="form__cell"></div>
+				</div>
+				<div class="form__row">
+					<div class="form__subtitle">Адрес доставки:</div>
+				</div>
+				<div class="form__row form__row_table">
+					<div class="form__cell form__cell_30">
+						<label class="form__label">город</label>
+						<input type="text" name="phone" class="form__input" value="Москва" />
+					</div>
+					<div class="form__cell form__cell_30">
+						<label class="form__label">улица</label>
+						<input type="text" name="mail" class="form__input" value="Ленина" />
+					</div>
+					<div class="form__cell form__cell_20">
+						<label class="form__label">Дом</label>
+						<input type="text" name="mail" class="form__input" />
+					</div>
+					<div class="form__cell form__cell_20">
+						<label class="form__label">корпус</label>
+						<input type="text" name="mail" class="form__input" />
+					</div>
+				</div>
+				<div class="form__row form__row_center cabinet__button">
+					<input type="submit" name="submit" value="изменить данные" class="form__submit" />
+				</div>
+			</form>
+		</div>
+	</div>
+{% endblock %}

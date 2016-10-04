@@ -1,0 +1,113 @@
+{% set card = {
+	"title": "Название товара",
+	"image": "../images/card.jpg",
+	"count": "15",
+	"articul": "8742415",
+	"text": "<p>Рыбные тексты также применяются для демонстрации различных видов шрифта и в разработке макетов. Как правило их содержание бессмысленно. </p><p>По причине своей функции текста-заполнителя для макетов нечитабельность рыбных текстов имеет особое значение, так как человеческое восприятие имеет особенность, распознавать определенные образцы и повторения. </p>",
+	"price": "48900",
+	"oldPrice": "44900",
+	"reviews": [
+		{"name": "Константин Сокол-Котыловский", "position": "Исполнительный заместительный директор<br>ООО «Лаборатория Бизнеса в Константинополе»", "image": "../images/review.jpg", "text": "Если коротко, то ваш магазин – лучший магазин на свете. Легко разобрался где что находится в этом чудесном места, сразу заказал товары на несколько месяцев вперёд. Всем рекомендую!"},
+		{"name": "Константин Сокол-Котыловский", "position": "Исполнительный заместительный директор<br>ООО «Лаборатория Бизнеса в Константинополе»", "image": "../images/review.jpg", "text": "Если коротко, то ваш магазин – лучший магазин на свете. Легко разобрался где что находится в этом чудесном места, сразу заказал товары на несколько месяцев вперёд. Всем рекомендую!"},
+		{"name": "Константин Сокол-Котыловский", "position": "Исполнительный заместительный директор<br>ООО «Лаборатория Бизнеса в Константинополе»", "image": "../images/review.jpg", "text": "Если коротко, то ваш магазин – лучший магазин на свете. Легко разобрался где что находится в этом чудесном места, сразу заказал товары на несколько месяцев вперёд. Всем рекомендую!"}
+	],
+	"withThis": [
+		{"link": "#", "image": "../images/catalog1.png", "title": "Кирпич для живых  цветов \"VITAL\"", "price": "250 000", "type": "stock"},
+		{"link": "#", "image": "../images/catalog2.png", "title": "Кирпич для живых  цветов \"VITAL\"", "price": "250 000"},
+		{"link": "#", "image": "../images/catalog3.png", "title": "Кирпич для живых  цветов \"VITAL\"", "price": "250 000", "type": "stock"}
+	]
+}%}
+
+<div class="card">
+	<div class="page__container">
+		<h1 class="card__title">{{ card.title }}</h1>
+		<div class="card__body clearfix">
+			<div class="card__image">
+				<img src="{{ card.image }}" alt="{{ card.title }}" class="card__img" />
+			</div>
+			<div class="card__content">
+				<div class="card__articul">Артикуль: <span class="card__articul-value">{{ card.articul }}</span></div><div class="card__count">
+					{% if card.count %}
+						<div class="card__count-text">в наличии {{ card.count }} на складе</div>
+					{% else %}
+						<div class="card__count-text card__count-text_no">нет в наличии!</div>
+					{% endif %}
+				</div> 
+				{% if not card.count %}
+					<a href="#" class="card__notify">уведомить меня о поставке товара</a>
+				{% endif %}
+				<div class="card__text">{{ card.text | safe }}</div>
+				<div class="card__sotial">
+					{% include 'sotial.html'%}
+				</div>
+				<div class="card__price">
+					Цена:
+					<div class="card__price-inner">
+						{% if card.oldPrice %}
+							<div class="card__price-wrapper">
+								<div class="card__price-old"><span>{{ card.oldPrice }}</span></div>
+								<div class="card__price-sale">Скидка -{{ (100 - (card.oldPrice * 100) /card.price)|round|int }}%</div>
+							</div>
+						{% endif %}
+						<div class="card__price-current">{{ card.price }}</div>
+					</div>
+					<div>
+						{% if card.count %}
+							<a href="#" class="card__button card__button_buy">Купить</a>
+						{% else %}
+							<a href="#" class="card__button">Оставить заявку</a>
+						{% endif %}
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="card__info clearfix">
+			<div class="card__with-this">
+				<div class="card__with-this-title">С этим товаром покупают</div>
+				<ul class="card__with-this-list">
+					{% for item in card.withThis -%}
+						<li class="card__with-this-item {% if item.type %}card__with-this-item_type_{{ item.type }}{% endif %}">
+							<a href="{{ item.link }}" class="card__with-this-link">
+								<span class="card__with-this-image">
+									<img src="{{ item.image }}" alt="{{ item.title }}" class="card__with-this-img"/>
+								</span>
+								<span class="card__with-this-name">{{ item.title }}</span>
+								<span class="card__with-this-price">{{ item.price }}</span>
+							</a>
+						</li>
+					{%- endfor %}
+				</ul>
+			</div><div class="card__review">
+				<div class="card__review-title">Последние отзывы</div>
+				<ul class="card__review-list">
+					{% for item in card.reviews %}
+						<li class="card__review-item">
+							<div class="card__review-profile">
+								<div class="card__review-image">
+									<img src="{{ item.image }}" alt="{{ item.name }}" class="card__review-img"/>
+								</div>
+								<div class="card__review-description">
+									<div class="card__review-name">{{ item.name }}</div>
+									<div class="card__review-position">{{ item.position | safe }}</div>
+								</div>
+							</div>
+							<div class="card__review-text">{{ item.text }}</div>
+						</li>
+					{% endfor %}
+				</ul>
+				<div class="card__review-bottom">
+					<a href="#" class="card__review-button">Добавить отзыв</a>
+					<div class="card__review-controls">
+						<a href="#" class="card__review-arrow card__review-arrow_prev"></a>
+						<div class="card__review-points">
+							{% for item in card.reviews %}
+								<a href="#" class="card__review-point {% if loop.first %}card__review-point_active{% endif %}"></a>
+							{% endfor %}
+						</div>
+						<a href="#" class="card__review-arrow card__review-arrow_next"></a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

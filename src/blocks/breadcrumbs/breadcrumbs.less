@@ -1,0 +1,40 @@
+@import "../main/var";
+
+.breadcrumbs{
+	font-size: 0;
+
+	&__item{
+		margin-right: 30px;
+		font-size: 12px;
+		line-height: 22px;
+		text-transform: uppercase;
+		color: @c-grey;
+		display: inline-block;
+		vertical-align: middle;
+
+		&_separator:before{
+			content: "→";
+		}
+
+		&_home:before{
+			content: '';
+			width: 17px;
+			height:  22px;
+			line-height: 22px;
+			display: inline-block;
+			background: url(../images/home-ico.png) no-repeat center;
+		}
+	}
+
+	&__link{
+		color: @c-title;
+		line-height: 1;
+		display: inline-block;
+		border-bottom: 1px dotted @c-grey;
+		text-decoration: none !important;
+
+		&:hover{
+			border-color: transparent;
+		}
+	}
+}

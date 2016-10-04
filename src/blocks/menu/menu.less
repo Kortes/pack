@@ -1,0 +1,83 @@
+@import "../main/var";
+
+.menu{
+	border-top: 1px solid @c-border;
+	border-bottom: 1px solid @c-border;
+
+	&__button{
+		float:right;
+		margin: 8px 0 8px 20px;
+		display: none;
+		color: @c-white;
+		background: @c-red;
+		border-radius: 19px;
+		line-height: 38px;
+		padding: 0 30px;
+		font-size: 11px;
+		font-weight: 600;
+		text-transform: uppercase;
+		text-decoration: none !important;
+	}
+
+	&__sotial{
+		float:right;
+		margin: 15px 0 15px 20px;
+		color: @c-grey;
+
+		&-list{
+			display: inline-block;
+			vertical-align: top;
+			margin: 7px 0 0 20px;
+			line-height: 1;
+		}
+
+		&-item{
+			display: inline-block;
+			margin-left: 10px;
+		}
+
+		&-link{
+			display: block;
+			width: 15px;
+			height: 15px;
+			background: url(../images/sotial-menu.png) no-repeat;
+
+			&_type_fb{
+				background-position: center 0;
+			}
+
+			&_type_tw{
+				background-position: center -15px;
+			}
+
+			&_type_google{
+				background-position: center -30px;
+			}
+
+			&_type_vk{
+				background-position: center -45px;
+			}
+
+			&:hover{
+				opacity: 0.5;
+			}
+		}
+	}
+
+	&__list{
+		overflow: hidden;
+	}
+
+	&__item{
+		display: inline-block;
+		white-space: nowrap;
+		line-height: 55px;
+		margin-right: 60px;
+		font-size: 16px;
+		font-weight: 600;
+	}
+
+	&__link{
+		color: lighten(@c-title, 6.5%);
+	}
+}

@@ -1,0 +1,54 @@
+@import "../main/var";
+
+.category{
+	border-top: 1px solid @c-border;
+	border-bottom: 1px solid @c-border;
+	font-family: 'lato', Arial, sans-serif;
+	padding: 20px 0;
+	margin-bottom: 20px;
+
+	&__item{
+		display: inline-block;
+		vertical-align: top;
+		width: 160px;
+		margin-left: 30px;
+
+		&:first-child{
+			margin-left: 0;
+		}
+	}
+
+	&__link{
+		display: block;
+		text-decoration: none !important;
+		color: lighten(@c-title, 6.5%);
+		font-weight: 600;
+		text-transform: uppercase;
+		font-size: 13px;
+		line-height: 1.2;
+	}
+
+	&__image{
+		height: 70px;
+		display: block;
+		position: relative;
+	}
+
+	&__img{
+		position: absolute;
+		top: 0;
+		bottom: 0;
+		left: 0;
+		margin: auto;
+		max-height: 70px;
+		height: auto;
+		max-width: 100%;
+		width: auto;
+	}
+
+	&__title{
+		display: block;
+		height: 45px;
+		overflow: hidden;
+	}
+}

@@ -1,0 +1,332 @@
+@import "../main/var";
+
+.cabinet{
+	padding: 35px 0;
+
+	&__head{
+		text-transform: uppercase;
+		font-size: 36px;
+		letter-spacing: 2px;
+		margin-bottom: 30px;
+	}
+
+	&__button{
+		padding-top: 50px;
+	}
+
+	&__tab{
+		margin-bottom: 50px;
+		border-radius: 15px;
+		border: 1px solid @c-border;
+		display: inline-block;
+		white-space: nowrap;
+		font-size: 0;
+
+		&-item{
+			display: inline-block;
+
+			&:first-child .cabinet__tab-label{
+				border-radius: 15px 0 0 15px;
+			}
+
+			&:last-child .cabinet__tab-label{
+				border-radius: 0 15px 15px 0;
+			}
+		}
+
+		&-input{
+			display: none;
+
+			&:checked + label{
+				background: @c-white;
+				color: @c-title;
+
+				span{
+					border-color: transparent;
+				}
+			}
+		}
+
+		&-label{
+			display: block;
+			font-size: 12px;
+			line-height: 14px;
+			padding: 7px 20px;
+			background: @c-bg-grey;
+			cursor: pointer;
+
+			span{
+				color: @c-grey;
+				display: block;
+				border-bottom: 1px dotted @c-grey;
+			}
+		}
+	}
+
+	&__breadcrumbs{
+		margin-bottom: 60px;
+
+		&-item{
+			display: inline-block;
+			vertical-align: top;
+			min-width: 160px;
+			position: relative;
+			margin-right: 80px;
+			padding-bottom: 10px;
+			text-align: center;
+			font-weight: 600;
+			font-size: 16px;
+			line-height: 24px;
+			color: @c-border;
+
+			&:before{
+				content: "";
+				position: absolute;
+				top: 100%;
+				left: 50%;
+				margin-left: -80px;
+				width: 160px;
+				height: 2px;
+				background: @c-border;
+			}
+
+			&_active{
+				color: @c-title;
+
+				&:before{
+					background: @c-red;
+				}
+			}
+
+			a{
+				text-decoration: none !important;
+				color: @c-title;
+			}
+		}
+	}
+
+	&__history{
+		width: 100%;
+		table-layout: fixed;
+
+		th{
+			padding: 5px;
+			text-align: left;
+			color: @c-title;
+			text-transform: uppercase;
+			font-size: 10px;
+		}
+
+		td{
+			padding: 5px;
+			height: 40px;
+			vertical-align: middle;
+			border-top: 1px solid @c-border;
+		}
+	}
+
+	&__name{
+		width: 35%;
+	}
+
+	&__date{
+		width: 15%;
+	}
+
+	&__price{
+		width: 18%;
+	}
+
+	&__status{
+		width: 12%;
+		color: @c-green;
+	}
+
+	&__button{
+		width: 20%;
+	}
+
+	&__row{
+		&_even td{
+			background: @c-white;
+		}
+
+		&_odd td{
+			background: lighten(@c-bg-grey, 2%);
+		}
+
+		&_toggle{
+			cursor: pointer;
+		}
+
+		&_hidden{
+			display: none;
+
+			& > td{
+				padding: 0;
+				border-color: @c-title;
+			}
+		}
+
+		&_active{
+			td{
+				border-color: @c-title;
+				color: @c-title;
+
+				&.cabinet__price{
+					color: @c-red;
+				}
+
+				&.cabinet__status{
+					color: @c-green;
+				}
+			}
+		}
+	}
+
+	&__btn{
+		display: inline-block;
+		font-size: 11px;
+		text-transform: uppercase;
+		text-decoration: none !important;
+		border: 2px solid @c-red;
+		border-radius: 17px;
+		line-height: 30px;
+		padding: 0 20px;
+		color: @c-title;
+	}
+
+	&__list{
+		width: 100%;
+		table-layout: fixed;
+
+		&-name{
+			width: 40%;
+		}
+
+		&-count{
+			width: 14%;
+		}
+
+		&-price{
+			width: 15%;
+
+			&:after{
+				content: " руб."
+			}
+		}
+
+		&-payment{
+			width: 13%;
+			font-weight: 600;
+		}
+
+		&-delivery{
+			width: 13%;
+			font-weight: 600;
+		}
+
+		&-delete{
+			width: 5%;
+			text-align: center;
+		}
+
+		td, th{
+			padding: 5px;
+		}
+
+		th{
+			height: 40px;
+			font-weight: 600;
+			color: @c-grey;
+			text-transform: none;
+			font-size: 12px;
+			vertical-align: middle;
+		}
+
+	}
+
+	a&__link{
+		text-decoration: none;
+		color: @c-title;
+		font-weight: 600;
+		display: table;
+		width: 100%;
+
+		&:hover{
+			.basket__title{
+				text-decoration: underline;
+			}
+		}
+	}
+
+	&__image{
+		width: 80px;
+		height: 80px;
+		display: table-cell;
+		vertical-align: middle;
+		text-align: center;
+	}
+
+	&__img{
+		max-width: 80px;
+		max-height: 80px;
+		width: auto;
+		height: auto;
+		vertical-align: middle;
+	}
+
+	&__content{
+		overflow: hidden;
+		display: table-cell;
+		vertical-align: middle;
+		padding-left: 10px;
+	}
+
+	&__title{
+		display: block;
+		text-decoration: underline;
+	}
+
+	&__articul{
+		display: block;
+		font-weight: 400;
+		color: @c-grey;
+		font-size: 12px;
+	}
+
+	&__delete{
+		display: inline-block;
+		width: 10px;
+		height: 10px;
+		position: relative;
+		transform: rotate(45deg);
+
+		&:before,
+		&:after{
+			content: "";
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			transform: translate(-50%, -50%);
+			background: lighten(@c-title, 20.5%);
+		}
+
+		&:before{
+			width: 10px;
+			height: 2px;
+		}
+
+		&:after{
+			width: 2px;
+			height: 10px;
+		}
+
+		&:hover{
+			&:before,
+			&:after{
+				background: @c-red;
+			}
+		}
+	}
+}

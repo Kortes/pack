@@ -1,0 +1,330 @@
+@import "../main/var";
+
+.form{
+	&__legend{
+		font-size: 16px;
+		font-weight: 600;
+		text-transform: uppercase;
+		display: block;
+		color: @c-title;
+		width: 100%;
+		text-align: center;
+		position: relative;
+		padding-bottom: 25px;
+		margin-bottom: 15px;
+
+		&:before{
+			content: "";
+			position: absolute;
+			bottom: 0;
+			left: 50%;
+			width: 120px;
+			margin-left: -60px;
+			height: 2px;
+			background: @c-red;
+		}
+	}
+
+	&__row{
+		padding-bottom: 25px;
+		width: 100%;
+
+		&_table{
+			display: table;
+		}
+
+		&_center{
+			text-align: center;
+		}
+	}
+
+	&__label{
+		display: block;
+		padding-bottom: 10px;
+		text-transform: uppercase;
+		font-size: 12px;
+		font-weight: 600;
+		color: @c-title;
+	}
+
+	&__input,
+	&__textarea{
+		width: 100%;
+		display: block;
+		box-sizing: border-box;
+		background: @c-input;
+		border: 1px solid @c-border;
+		line-height: 25px;
+		padding: 6px 12px;
+		font-size: 14px;
+		border-radius: 4px;
+		color: @c-text;
+	}
+
+	&__textarea{
+		resize: none;
+		height: 150px;
+	}
+
+	&__cell{
+		display: table-cell;
+		vertical-align: top;
+		padding: 0 12px;
+
+		&:first-child{
+			padding-left: 0;
+		}
+
+		&:last-child{
+			padding-right: 0;
+		}
+
+		&_5{
+			width: 5%;
+		}
+
+		&_10{
+			width: 10%;
+		}
+
+		&_15{
+			width: 15%;
+		}
+
+		&_20{
+			width: 20%;
+		}
+
+		&_25{
+			width: 25%;
+		}
+
+		&_30{
+			width: 30%;
+		}
+
+		&_35{
+			width: 35%;
+		}
+
+		&_40{
+			width: 40%;
+		}
+
+		&_45{
+			width: 45%;
+		}
+
+		&_50{
+			width: 50%;
+		}
+
+		&_55{
+			width: 55%;
+		}
+
+		&_60{
+			width: 60%;
+		}
+
+		&_65{
+			width: 65%;
+		}
+
+		&_70{
+			width: 70%;
+		}
+
+		&_75{
+			width: 75%;
+		}
+
+		&_80{
+			width: 80%;
+		}
+
+		&_85{
+			width: 85%;
+		}
+
+		&_90{
+			width: 90%;
+		}
+
+		&_95{
+			width: 95%;
+		}
+	}
+
+	&__submit{
+		background: none;
+		border: 2px solid @c-red;
+		color: @c-red;
+		text-transform: uppercase;
+		padding: 0 25px;
+		line-height: 52px;
+		border-radius: 27px;
+		min-width: 360px;
+		font-weight: 500;
+		font-size: 18px;
+		cursor: pointer;
+		display: inline-block;
+		text-decoration: none !important;
+	}
+
+	&__radio{
+		display: block;
+		color: @c-title;
+
+		&-input{
+			display: none;
+
+			&:checked + span:before{
+				background: @c-red;
+			}
+		}
+
+		&-value{
+			font-weight: 600;
+
+			a&{
+				color: @c-red;
+				text-decoration: none !important;
+				border-bottom: 1px dashed @c-red;
+			}
+		}
+
+		& > span{
+			position: relative;
+			padding-left: 40px;
+
+			&:before{
+				content: "";
+				position: absolute;
+				top: 2px;
+				left: 0;
+				width: 10px;
+				height: 10px;
+				border: 2px solid @c-white;
+				box-shadow: 0 0 0 1px @c-border;
+				border-radius: 50%;
+			}
+		}
+	}
+
+	&__check{
+		display: block;
+		color: @c-title;
+
+		&-input{
+			display: none;
+
+			&:checked + span:after{
+				content: "";
+				position: absolute;
+				top: 0;
+				left: 0;
+				width: 18px;
+				height: 17px;
+				background: url(../images/checkbox.png) no-repeat;
+
+				.form__check_red &{
+					background: url(../images/checkbox-red.png) no-repeat;
+				}
+			}
+		}
+
+		& > span{
+			position: relative;
+			padding-left: 35px;
+
+			&:before{
+				content: "";
+				position: absolute;
+				top: 2px;
+				left: 0;
+				width: 15px;
+				height: 15px;
+				border: 1px solid @c-border;
+				border-radius: 3px;
+				background-color: @c-white;
+			}
+		}
+	}
+
+	&__ib{
+		display: inline-block;
+		margin-right: 50px;
+
+		&:last-child{
+			margin-right: 0;
+		}
+	}
+
+	&__error{
+		border-color: @c-red;
+		box-shadow: 0 0 0 1px @c-red;
+		color: @c-red;
+	}
+
+	&__subtitle{
+		font-weight: 600;
+		font-size: 16px;
+		color: @c-title;
+	}
+
+}
+
+.post{
+	margin: 50px 0;
+	box-shadow: 4px 6px 50px rgba(0,0,0,0.22);
+	background: url(../images/post.jpg);
+	padding: 6px;
+	position: relative;
+	overflow: hidden;
+
+	&:after,
+	&:before{
+		content: "";
+		position: absolute;
+		height: 35px;
+		background: @c-red;
+		width: 200px;
+		transform: rotate(45deg);
+	}
+
+	&:before{
+		bottom: 40px;
+		left: -45px;
+	}
+
+	&:after{
+		top: 40px;
+		right: -45px;
+	}
+
+	&__form{
+		background: @c-white;
+		padding: 40px 75px 20px;
+
+		&:after,
+		&:before{
+			content: "";
+			position: absolute;
+			height: 35px;
+			background: @c-red;
+			width: 200px;
+			transform: rotate(-45deg);
+		}
+
+		&:before{
+			bottom: 40px;
+			right: -45px;
+		}
+
+		&:after{
+			top: 40px;
+			left: -45px;
+		}
+	}
+}

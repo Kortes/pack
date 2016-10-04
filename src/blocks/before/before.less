@@ -1,0 +1,35 @@
+@import "../main/var";
+
+.before{
+	padding-top: 35px;
+
+	&__title{
+		text-align: center;
+		font-weight: 600;
+		padding-bottom: 45px;
+		font-size: 16px;
+		color: @c-title;
+	}
+
+	&__content{
+		background: linear-gradient(to bottom,darken(@c-bg-grey, 12.5%) 0%, @c-bg-grey 30px, @c-bg-grey 100%); 
+		position: relative;
+
+		&:before{
+			content: "";
+			position: absolute;
+			top: 0;
+			left: 50%;
+			margin-left: -10px;
+			border-top: 10px solid @c-white;
+			border-left: 10px solid transparent;
+			border-right: 10px solid transparent;
+		}
+	}
+
+	&__inner{
+		margin: 0 -10px;
+		padding: 15px 0;
+		font-size: 0;
+	}
+}

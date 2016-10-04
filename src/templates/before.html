@@ -1,0 +1,22 @@
+{% set products =[
+	{"title": "Мишка-конструктор  с основой. Оазис", "link": "#", "image": "images/goods.jpg", "text": "Рыбное описание товара Рыбное описание товара", "price": "250 000", "oldprice": "260 000", "count": "987", "type": "new" },
+	{"title": "Мишка-конструктор  с основой. Оазис", "link": "#", "image": "images/goods.jpg", "text": "Рыбное описание товара Рыбное описание товара", "price": "250 000", "oldprice": "260 000" },
+	{"title": "Мишка-конструктор  с основой. Оазис", "link": "#", "image": "images/goods.jpg", "text": "Рыбное описание товара Рыбное описание товара", "price": "250 000", "oldprice": "260 000", "count": "987", "type": "new" },
+	{"title": "Мишка-конструктор  с основой. Оазис", "link": "#", "image": "images/goods.jpg", "text": "Рыбное описание товара Рыбное описание товара", "price": "250 000", "oldprice": "260 000" }
+]%}
+
+<div class="before">
+	<div class="page__container">
+		<div class="before__title">До вас купили</div>
+	</div>
+	<div class="before__content">
+		<div class="page__container">
+			<div class="before__inner">
+				{% for item in products %}
+					{% set product = item %}
+					{% include 'product.html' %}
+				{% endfor %}
+			</div>
+		</div>
+	</div>
+</div>

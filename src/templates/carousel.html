@@ -1,0 +1,27 @@
+{% set carousel = [
+	{"link": "#", "image": "images/carousel1.jpg"},
+	{"image": "images/carousel1.jpg"},
+	{"link": "#", "image": "images/carousel1.jpg"}
+]%}
+
+<div class="carousel">
+	<ul class="carousel__list">
+		{% for item in carousel %}
+			<li class="carousel__item">
+				{% if item.link %}
+					<a href="{{ item.link }}" class="carousel__link">
+						<img src="{{ item.image }}" class="carousel__image" alt="">
+					</a>
+				{% else %}
+					<span class="carousel__link">
+						<img src="{{ item.image }}" class="carousel__image" alt="">
+					</span>
+				{% endif %}
+			</li>
+		{% endfor %}
+	</ul>
+	<div class="page__container carousel__control">
+		<a href="#" class="carousel__arrow carousel__arrow_prev"></a>
+		<a href="#" class="carousel__arrow carousel__arrow_next"></a>
+	</div>
+</div>

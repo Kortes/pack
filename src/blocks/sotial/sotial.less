@@ -1,0 +1,83 @@
+@import "../main/var";
+
+.sotial{
+	font-family: 'lato', Arial, sans-serif;
+
+	&__title{
+		border-bottom: 5px solid @c-border;
+		font-size: 12px;
+		text-transform: uppercase;
+		padding-bottom: 15px;
+		display: inline-block;
+		color: @c-title;
+		margin-bottom: 25px;
+	}
+
+	.ya-share2__badge{
+		background: none !important;
+	}
+
+	.ya-share2__container_size_m .ya-share2__item_service_facebook .ya-share2__icon{
+		background: url(../images/sotial-share.png) no-repeat center 0;
+	}
+
+	.ya-share2__container_size_m .ya-share2__item_service_vkontakte .ya-share2__icon{
+		background: url(../images/sotial-share.png) no-repeat  center -24px;
+	}
+
+	.ya-share2__container_size_m .ya-share2__item_service_gplus .ya-share2__icon{
+		background: url(../images/sotial-share.png) no-repeat  center -48px;
+	}
+
+	.ya-share2__container_size_m .ya-share2__counter{
+		color: @c-title;
+		border: 1px solid @c-border;
+		line-height: 22px;
+		border-radius: 3px;
+		position: relative;
+		margin-left: 5px;
+
+		&:before,
+		&:after{
+			content: "";
+			position: absolute;
+			top:50%;
+			border-top: 5px solid transparent;
+			border-bottom: 5px solid transparent;
+			transform: translateY(-50%);
+			margin-left: 0;
+		}
+
+		&:before{
+			border-right: 5px solid @c-border;
+			left: -6px;
+		}
+
+		&:after{
+			border-right: 5px solid @c-white;
+			left: -4px;
+		}
+	}
+
+	.card__sotial &{
+		border-top: 5px solid @c-border;
+		border-bottom: 1px solid @c-border;
+		padding: 15px 0 20px;
+		margin-bottom: 15px;
+
+		.sotial__title{
+			border: none;
+			margin: 0;
+			padding: 0;
+			width: 150px;
+			vertical-align: middle;
+			line-height: 16px;
+		}
+
+		.ya-share2{
+			display: inline-block;
+			vertical-align: middle;
+			margin-left: 30px;
+		}
+	}
+}

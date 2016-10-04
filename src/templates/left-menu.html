@@ -1,0 +1,25 @@
+{% set leftMenu = [
+	{"link": "#", "title": "Ленты", "list": [{"link": "#", "title": "Джутовое полотно"}, {"link": "#", "title": "Джутовое полотно2"}, {"link": "#", "title": "Джутовое полотно3"}, {"link": "#", "title": "Джутовое полотно4"}]},
+	{"active": true,"link": "#", "title": "УПАКОВКИ", "list": [{"link": "#", "title": "Джутовое полотно", "active": true}, {"link": "#", "title": "Джутовое полотно2"}, {"link": "#", "title": "Джутовое полотно3"}, {"link": "#", "title": "Джутовое полотно4"}]},
+	{"link": "#", "title": "аксессуары", "list": [{"link": "#", "title": "Джутовое полотно"}, {"link": "#", "title": "Джутовое полотно2"}, {"link": "#", "title": "Джутовое полотно3"}, {"link": "#", "title": "Джутовое полотно4"}]},
+	{"link": "#", "title": "Каркасы для букетов"}
+]%}
+
+<ul class="left-menu">
+	{% for item in leftMenu %}
+		<li class="left-menu__item 
+				   {% if item.active %}left-menu__item_active{% endif %}
+				   {% if item.list %}left-menu__item_drop{% endif %}">
+			<a href="{{ item.link }}" class="left-menu__link">{{ item.title }}</a>
+			{% if item.list %}
+				<ul class="left-menu__sublist">
+					{% for sub in item.list %}
+						<li class="left-menu__subitem {% if sub.active %}left-menu__subitem_active{% endif %}">
+							<a href="{{ sub.link }}" class="left-menu__sublink">{{ sub.title }}</a>
+						</li>
+					{% endfor %}
+				</ul>
+			{% endif %}
+		</li>
+	{% endfor %}
+</ul>

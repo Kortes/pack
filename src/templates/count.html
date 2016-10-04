@@ -1,0 +1,5 @@
+<div class="count {% if countType %}count_type_{{ countType }}{% endif %}">
+	<input type="number" class="count__input" value="{% if count %}{{ count }}{% else %}1{% endif %}" min="1" />
+	<a href="#" class="count__arrow count__arrow_plus"></a>
+	<a href="#" class="count__arrow count__arrow_minus"></a>
+</div>

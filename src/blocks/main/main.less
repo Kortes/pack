@@ -1,0 +1,254 @@
+@import "var";
+
+html, body{
+	height: 100%;
+}
+
+.page{
+    -webkit-font-smoothing: antialiased;
+    font: 14px/1.85 'lato', Arial, sans-serif;
+    color: @c-text;
+    background-color: @c-second-dark;
+
+    &__inner{
+        background-color: @c-white;
+    }
+
+    &__container{
+        max-width: 980px;
+        min-width: 980px;
+        margin: 0 auto; 
+        padding: 0 20px;     
+    }
+
+    &__aside{
+        float: left;
+        width: 230px;
+        padding-top: 25px;
+    }
+
+    &__content{
+        padding: 35px 0 50px 250px;
+    }
+
+    &_wholesaler{
+        .filter__type,
+        .menu__sotial{
+            display: none;
+        }
+
+        .menu__button{
+            display: block;
+        }
+    }
+
+    &__error{
+        overflow-x: hidden;
+    }
+}
+
+.text{
+    font-family: 'playfair_display';
+    margin-bottom: 50px;
+
+    h1, .h1,
+    h2, .h2,
+    h3, .h3,
+    h4, .h4,
+    h5, .h5,
+    h6, .h6{
+        font-weight: 600;
+        font-family: 'lato', Arial, sans-serif;
+        margin: 1em 0;
+        line-height: 1.2;
+        text-transform: uppercase;
+        letter-spacing: 0.2em;
+    }
+
+    h1, .h1{
+        font-size: 36px;
+    }
+
+    h2, .h2{
+        font-size: 30px;
+    }
+
+    h3, .h3{
+        font-size: 24px;
+    }
+
+    h4, .h4{
+        font-size: 18px;
+    }
+
+    h5, .h5,
+    h6, .h6{
+        font-size: 12px;
+    }
+
+    time{
+        font-size: 15px;
+        font-weight: 600;
+        margin: 1em 0;
+        color: @c-grey;
+        font-family: 'lato', Arial, sans-serif;
+        letter-spacing: 0.2em;
+    }
+
+    figure p{
+        margin-bottom: 15px;
+    }
+
+    figcaption{
+        position: relative;
+        padding: 5px 10px;
+        font-weight: 600;
+        font-family: 'lato', Arial, sans-serif;
+        color: @c-title;
+
+        &:before{
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 290px;
+            height: 1px;
+            background: @c-border;
+        }
+    }
+
+    dl{
+        float:left;
+        width: 200px;
+        padding-right: 30px;
+        font-family: 'lato', Arial, sans-serif;
+        font-size: 12px;
+        line-height: 22px;
+        margin-bottom: 30px;
+
+        dt{
+            position: relative;
+            text-transform: uppercase;
+            padding-bottom: 15px;
+            margin-bottom: 15px;
+
+            &:before{
+                content: "";
+                position: absolute;
+                bottom: 0;
+                left: 0;
+                width: 50px;
+                height: 5px;
+                background: @c-red;
+            }
+        }
+
+        & + p{
+            margin-top: 0;
+        }
+    }
+
+    table{
+        font-family: 'lato', Arial, sans-serif;
+        line-height: 22px;
+        font-size: 13px;
+    }
+
+    tr{
+        &:nth-child(odd){
+            td, th{
+                background: @c-white;
+            }
+        }
+
+        &:nth-child(even){
+            td, th{
+                background: fade(@c-table-grey, 20%);
+            }
+        }
+    }
+
+    td, th{
+        padding: 5px;
+        height: 50px;
+        border-bottom: 1px solid @c-table-grey;
+        vertical-align: middle;
+    }
+
+    th{
+        border-width: 5px;
+        height: auto;
+        text-align: left;
+        text-transform: uppercase;
+        font-size: 10px;
+    }
+}
+
+.hide{
+    display: none;
+}
+
+.pattern{
+    box-shadow: inset 1px 2px 45px rgba(2,3,3,.5);
+
+    &_purpur{
+        background: url(../images/purpurPatern.jpg) center;
+    }
+
+    &_grey{
+        background: url(../images/greyPatern.jpg) center;
+    }
+}
+
+.panel{
+    &_grey{
+        background: linear-gradient(to bottom,darken(@c-bg-grey, 12.5%) 0%, @c-bg-grey 30px, @c-bg-grey 100%); 
+    }
+}
+
+.map{
+    height: 435px;
+}
+
+a{
+    color: @c-link;
+    text-decoration: none;
+
+    &:hover{
+        text-decoration: underline;
+    }
+}
+
+h1, .h1,
+h2, .h2,
+h3, .h3{
+    font-size: 24px;
+    font-weight: 600;
+    color: @c-title;
+    margin-bottom: 40px;
+}
+
+h4, .h4{
+    font-size: 13px;
+    text-transform: uppercase;
+}
+
+p{
+    margin: 30px 0;
+}
+
+.color-grey{
+    color: @c-grey !important;
+}
+
+.clearfix:before,
+.clearfix:after {
+    content:"";
+    display:table;
+}
+.clearfix:after {
+    clear:both;
+}
+.clearfix {
+    zoom:1; /* Хак для IE 6 и 7 */
+}

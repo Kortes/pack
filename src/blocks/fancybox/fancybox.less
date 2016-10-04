@@ -1,0 +1,337 @@
+.fancybox{
+	display:none;
+
+	&-skin{
+		border-radius: 0;
+		background: @c-white !important;
+	}
+
+	&__content{
+		padding: 40px 90px;
+		position: relative;
+
+		&_small{
+			padding: 40px 35px 15px;
+		}
+	}
+
+	&__close{
+		position: absolute;
+		right: 18px;
+		top: 18px;
+		width: 20px;
+		height: 20px;
+		cursor: pointer;
+
+		&:before,
+		&:after{
+			content: "";
+			position: absolute;
+			top: 50%;
+			height: 2px;
+			width: 20px;
+			background: @c-grey;
+		}
+
+		&:before{
+			transform: translateY(-50%) rotate(45deg);
+		}
+
+		&:after{
+			transform: translateY(-50%) rotate(135deg);
+		}
+	}
+
+	&__button{
+		margin: 0 -20px;
+		width: auto;
+	}
+
+	&__image{
+		display: inline-block;
+		line-height: 40px;
+		margin-left: 20px;
+
+		img{
+			vertical-align: middle;
+		}
+	}
+
+	&__label{
+		display: inline-block;
+		line-height: 40px;
+	}
+
+	&__check{
+		display: block;
+		line-height: 18px;
+	}
+
+	&__pass{
+		color: @c-red;
+		text-decoration: none !important;
+		border-bottom: 1px dotted @c-red;
+	}
+
+	&__or{
+		position: relative;
+		text-align: center;
+
+		&:before{
+			content: "";
+			position: absolute;
+			top: 50%;
+			left: 0;
+			right: 0;
+			height: 1px;
+			background: darken(@c-border, 5%);
+		}
+
+		&:after{
+			content: "или";
+			position: relative;
+			background: @c-white;
+			padding: 0 5px;
+			font-size: 12px;
+			font-weight: 600;
+			text-transform: uppercase;
+			color: darken(@c-border, 5%);
+		}
+	}
+
+	&__sotial{
+		text-align: center;
+		text-transform: uppercase;
+		font-size: 12px;
+		font-weight: 600;
+		margin: 10px 0;
+	}
+
+	&__with-this{
+		padding: 35px 35px 45px;
+		background: @c-bg-grey;
+
+		&-title{
+			color: @c-title;
+			font-weight: 600;
+			font-size: 16px;
+			padding-bottom: 25px;
+			text-align: center;
+		}
+
+		&-list{
+			margin: 0 -10px;
+		}
+
+		&-item{
+			margin: 0 10px;
+			display: inline-block;
+			vertical-align: top;
+			width: 140px;
+			background: @c-white;
+			box-sizing: border-box;
+			padding: 20px 15px;
+			border: 1px dotted @c-border;
+			position: relative;
+
+			&:hover{
+				border-color: transparent;
+				box-shadow: 1px 2px 10px rgba(0, 0, 0, 0.15);
+			}
+
+			&_type_new:before{
+				content: "НОВИНКА";
+				position: absolute;
+				top: 20px;
+				left: 0;
+				background: @c-white;
+				z-index: 1;
+				padding: 0 20px;
+				color: @c-green;
+				font-weight: 600;
+				font-size: 10px;
+				line-height: 22px;
+			}
+
+			&_type_stock:before{
+				content: "АКЦИЯ";
+				position: absolute;
+				top: 20px;
+				left: 0;
+				background: @c-white;
+				z-index: 1;
+				padding: 0 20px;
+				color: @c-red;
+				font-weight: 600;
+				font-size: 10px;
+				line-height: 22px;
+			}
+		}
+
+		&-link{
+			display: block;
+			text-decoration: none !important;
+			color: @c-text;
+		}
+
+		&-image{
+			display: block;
+			position: relative;
+			height: 150px;
+		}
+
+		&-img{
+			position: absolute;
+			top: 0;
+			bottom: 0;
+			left: 0;
+			right: 0;
+			margin: auto;
+			width: auto;
+			height: auto;
+			max-width: 100%;
+			max-height: 150px;
+		}
+
+		&-name{
+			display: block;
+			overflow: hidden;
+			font-size: 12px;
+			font-weight: 600;
+			line-height: 18px;
+			height: 36px;
+			margin: 5px 0 10px;
+		}
+
+		&-price{
+			position: relative;
+			color: @c-title;
+			font-weight: 600;
+			font-size: 16px;
+
+			&:before{
+				content: "P ";
+				font-weight: 200;
+			}
+
+			&:after{
+				content: "_";
+				font-weight: 200;
+				position: absolute;
+				top: -9px;
+				left: 0;
+			}
+		}
+	}
+
+	&__card{
+		width: 100%;
+		table-layout: fixed;
+		margin-bottom: 20px;
+
+		td{
+			padding: 0 20px;
+			vertical-align: middle;
+		}
+
+		&-image{
+			width: 150px;
+		}
+
+		&-content{
+			width: 280px;
+		}
+
+		&-count{
+ 			width: 90px;
+		}
+
+		&-price{
+			width: 100px;
+		}
+
+		&-img{
+			width: auto;
+			height: auto;
+			vertical-align: middle;
+			max-width: 150px;
+			max-height: 150px;
+		}
+
+		&-title{
+			font-size: 18px;
+			line-height: 20px;
+			font-weight: 600;
+			color: @c-title;
+			margin-bottom: 10px;
+		}
+
+		&-text{
+			font-size: 12px;
+			line-height: 19px;
+			color: @c-grey;
+		}
+
+		&-head{
+			font-weight: 600;
+			color: @c-grey;
+			margin-bottom: 10px;
+		}
+
+		&-total{
+			font-size: 16px;
+			line-height: 24px;
+			position: relative;
+			font-weight: 600;
+			color: @c-title;
+
+			&:before{
+				content: "Р ";
+				font-weight: 200;
+			}
+
+			&:after{
+				content: "_";
+				position: absolute;
+				top: -4px;
+				left: 0;
+				font-weight: 200;
+			}
+		}
+	}
+
+	&__submit{
+		background: @c-red;
+		border: 2px solid @c-red;
+		color: @c-white;
+		text-transform: uppercase;
+		padding: 0 25px;
+		line-height: 40px;
+		border-radius: 22px;
+		font-size: 15px;
+		cursor: pointer;
+		display: inline-block;
+		text-decoration: none !important;
+
+		&_close{
+			background: none;
+			color: @c-title;
+			margin-left: 15px;
+		}
+	}
+
+	&_success{
+		text-align: center;
+
+		.form__legend:before{
+			display: none;
+		}
+
+		.fancybox__title{
+			font-size: 40px;
+			border-bottom: 1px solid @c-border;
+			margin-bottom: 35px;
+		}
+	}
+
+}

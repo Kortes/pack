@@ -1,0 +1,11 @@
+<div class="similar">
+	<div class="page__container">
+		<div class="similar__title">{{ similar.title }}</div>
+		<ul class="similar__content">
+			{% for item in similar.list %}
+				{% set product = item %}
+				{% include 'product.html' %}
+			{% endfor %}
+		</ul>
+	</div>
+</div>

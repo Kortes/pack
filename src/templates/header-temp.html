@@ -1,0 +1,80 @@
+{% set header = {
+	"address": "Екатеринбург, ул. Черняховского 86, корпус 2 – \"Цветочно-садовая база №1\"",
+	"city": [{"name":"Екатеринбург", "value": "66"}, {"name":"Петропавловск-Камчатский", "value": "41"}],
+	"phone": "+7-902-879-57-23",
+	"logo": "images/logo.png",
+	"profile": "Иванов Иван иванович"
+}%}
+
+<div class="header">
+	<div class="pattern pattern_purpur header__fixed">
+		<div class="page__container">
+			<div class="header__top">
+				<div class="header__cell header__cell_type_address">{{ header.address }}</div>
+				<div class="header__cell header__cell_type_mode">
+					<div class="header__mode">
+						<input type="checkbox" name="headerMode" id="headerMode" class="hide">
+						<label for="headerMode">режим оптовика</label>
+					</div>
+				</div>
+				<div class="header__cell header__cell_type_city">
+					<select class="select header__city">
+						{% for item in header.city %}
+							<option value="{{ item.value }}">{{ item.name }}</option>
+						{% endfor %}
+					</select>
+				</div>
+				<div class="header__cell header__cell_type_call">
+					<a href="#call" class="header__call fancybox-link">Заказать звонок</a>
+				</div>
+				<div class="header__cell header__cell_type_phone">
+					<div class="header__phone">{{ header.phone }}</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="header__content">
+		<div class="page__container clearfix">
+			<div class="header__account">
+				<div class="header__profile">
+					{% if header.profile %}
+						<div class="header__logout">
+							<div class="header__name">{{ header.profile }}</div>
+							<a href="#" class="header__exit">Выход</a>
+						</div>
+					{% else %}
+						<div class="header__login">
+							<a href="#login" class="fancybox-link">Вход</a>/<a href="#reg" class="fancybox-link">Регистрация</a>
+						</div>
+					{% endif %}
+				</div>
+				<div class="header__basket">
+					{% if header.basket %}
+						<table class="header__basket-wrapper">
+							<tr>
+								<th>Кол-во:</th>
+								<th>Сумма, Руб:</th>
+							</tr>
+							<tr>
+								<td>
+									<span class="header__basket-count">
+										{{ header.basket.count }}
+										<span class="header__basket-popup">Товар добавлен<br>в корзину</span>
+									</span>
+								</td>
+								<td>{{ header.basket.sum }}</td>
+							</tr>
+						</table>
+					{% endif %}
+				</div>
+			</div>
+			<a href="/" class="header__logo">
+				<img src="{{ header.logo }}" class="header__logo-image" alt="Упаковка-нет-проблем" />
+			</a>
+			<form class="header__search" action="#" method="post">
+				<input type="search" class="header__search-input" />
+				<button type="submit" class="header__search-button"></button>
+			</form>
+		</div>
+	</div>
+</div>

@@ -1,0 +1,34 @@
+<li class="product {% if product.type %}product_type_{{ product.type }}{% endif %}">
+	<a href="{{ product.link }}" class="product__link">
+		<span class="product__image">
+			<img src="{{ product.image }}" class="product__img" alt="{{ product.title }}"/>
+		</span>
+		<span class="product__discription">
+			<span class="product__title">{{ product.title }}</span>
+			<span class="product__text">{{ product.text}}</span>
+		</span>
+	</a>
+	<div class="product__content">
+		<div class="product__count">
+			{% if product.count %}
+				<div class="product__count-text">{{ product.count }} на складе</div>
+			{% else %}
+				<div class="product__count-text product__count-text_no">нет в наличии</div>
+			{% endif %}
+			{% include 'count.html' %}
+		</div>
+		<div class="product__controls">
+			<div class="product__price clearfix">
+				{% if product.oldprice%}
+					<div class="product__price-old">{{ product.oldprice }}</div>
+				{% endif %}
+				<div class="product__price-current">{{ product.price }}</div>
+			</div>
+			{% if product.count %}
+				<a href="#basket" class="fancybox-link product__button product__button_buy">КУПИТЬ</a>
+			{% else %}
+				<a href="#" class="product__button">оставить заявку</a>
+			{% endif %}
+		</div>
+	</div>
+</li>

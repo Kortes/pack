@@ -1,0 +1,43 @@
+{% set page = {
+  "title": "SEO текст для продвижения",
+  "text": "<p>Рыбные тексты также применяются для демонстрации различных видов шрифта и в разработке макетов. Как правило их содержание бессмысленно. По причине своей функции текста-заполнителя для макетов нечитабельность рыбных текстов имеет особое значение, так как человеческое восприятие имеет особенность, распознавать определенные образцы и повторения. </p><p>В случае произвольного набора букв и длины слов ничто не отвлекает от оценки воздействия и читаемости различных шрифтов, а также от распределения текста на странице (макет или площадь набора).</p><p>Поэтому большинство рыбных текстов состоят из более или менее произвольного набора слов и слогов. Таким образом образцы повторения не отвлекают от общей картины, а шрифты имеют лучшую базу сравнения. </p>"
+} %}
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% block head %}
+      <link rel="stylesheet" href="css/main.css" />
+      <title>{% block title %}{% endblock %} - Упаковка-нет-проблем</title>
+      <meta charset='utf-8'>
+      <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+      <meta name='description' content=''>
+	    <meta name="viewport" content="width=1024">
+      <script type="text/javascript" src="//vk.com/js/api/openapi.js?127"></script>
+    {% endblock %}
+</head>
+<body class="page {% block pageClass %}{% endblock %}">
+    <div class="page__inner">
+      {% block header %}
+        {% include 'header.html' %}
+        {% include 'menu.html' %}
+      {% endblock %}
+      
+      {% block content %}{% endblock %}
+    </div>
+    {% block footer %}
+      {% include 'footer.html' %}
+    {% endblock %}
+    {% block fancybox %}
+      <div class="fancybox">
+        {% include 'fancybox.html' %}
+      </div>
+    {% endblock %}
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+    <script src="ui/fancybox/fancybox.js"></script>
+    <script src="ui/select2/dist/js/select2.min.js"></script>
+    {% block script %}{% endblock %}
+    <script src='js/main.js'></script>
+</body>
+</html>

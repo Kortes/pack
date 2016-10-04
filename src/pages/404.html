@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+
+{% block title %}Страница не существует{% endblock %}
+
+{% block pageClass %}page__error{% endblock %}
+
+{% block content %}
+	<div class="error">
+		<div class="panel panel_grey">
+			<div class="error__panel error__panel_small"></div>
+			<div class="error__panel error__panel_big"></div>
+		</div>
+		<div class="page__container">
+			<div class="error__content">
+				<div class="error__text">К сожалению, вынуждены сообщить, что данной страницы не существует.</div>
+				<a href="/" class="error__button">ВЕРнуться на главную</a>
+			</div>
+		</div>
+		<div class="panel panel_grey">
+			<div class="error__separator"></div>
+		</div>
+	</div>
+{% endblock %}

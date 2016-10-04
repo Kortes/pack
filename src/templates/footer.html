@@ -1,0 +1,62 @@
+{% set footer = {
+	"category":[{"link":"/category.html", "title": "Упаковка для цветов и проба для длинного названия"},{"link":"/category.html", "title": "Каркасы для букетов "},{"link":"/category.html", "title": "Ленты, веревки, рафия"},{"link":"/category.html", "title": "Сухоцветы"},{"link":"/category.html", "title": "Расходные материалы"},{"link":"/category.html", "title": "Инструменты"},{"link":"/category.html", "title": "Подарочная упаковка "},{"link":"/category.html", "title": "Игрушки"},{"link":"/category.html", "title": "Упаковка"},{"link":"/category.html", "title": "Каркасы"},{"link":"/category.html", "title": "Веревки, рафия"},{"link":"/category.html", "title": "Сухоцветы"},{"link":"/category.html", "title": "Расходные материалы"},{"link":"/category.html", "title": "Инструменты"},{"link":"/category.html", "title": "Подарочная упаковка "},{"link":"/category.html", "title": "Игрушки"},{"link":"/category.html", "title": "Сухоцветы"},{"link":"/category.html", "title": "Расходные материалы"},{"link":"/category.html", "title": "Инструменты"},{"link":"/category.html", "title": "Подарочная упаковка"}],
+	"about":[{"link":"#", "title": "История компании"},{"link":"#", "title": "Способы оплаты"},{"link":"#", "title": "Новости"},{"link":"#", "title": "Доставка"},{"link":"#", "title": "Вакансии"},{"link":"#", "title": "Контакты"}], 
+	"address": [{"text": "Екатеринбург, ул. Черняховского 86, корпус 2 – оптово-розничный центр \"Цветочно-садовая база №1\""},{"text":"Екатеринбург, ул. Гурзуфская, 48 литер А – оптово-розничный магазин (обслуживание заказов из интернет-магазина)"}],
+	"contacts": {"link":"/", "logo":"images/logo-footer.png", "phone": "+7 800 555 11 11", "sotial":[{"link":"#", "type": "fb"},{"link":"#", "type": "google"},{"link":"#", "type": "twitter"},{"link":"#", "type": "vk"}]}
+} %}
+
+<div class="footer">
+	<div class="page__container">
+		<div class="footer__inner clearfix">
+			<div class="footer__contact">
+				<a href="{{ footer.contacts.link }}" class="footer__logo">
+					<img src="{{ footer.contacts.logo }}" class="footer__logo-image" alt="Упаковка-нет-проблем" />
+				</a>
+				<div class="footer__copy">© 2016 Все права защищены</div>
+				<div class="footer__info">
+					Связаться с нами
+					<div class="footer__phone">{{ footer.contacts.phone }}</div>
+				</div>
+				<ul class="footer__sotial">
+					{% for sotial in footer.contacts.sotial -%}
+						<li class="footer__sotial-item">
+							<a href="{{ sotial.link }}" class="footer__sotial-link footer__sotial-link_type_{{ sotial.type }}"></a>
+						</li>
+					{%- endfor %}
+				</ul>
+			</div>
+			<div class="footer__content">
+				<div class="clearfix">
+					<div class="footer__menu footer__menu_type_about">
+						<div class="footer__menu-title">О нас</div>
+						<ul class="footer__menu-list">
+							{% for about in footer.about -%}
+								<li class="footer__menu-item">
+									<a href="{{ about.link }}" class="footer__menu-link">{{ about.title }}</a>
+								</li>
+							{%- endfor %}
+						</ul>
+					</div>
+					<div class="footer__menu footer__menu_type_category">
+						<div class="footer__menu-title">Категории</div>
+						<ul class="footer__menu-list">
+							{% for category in footer.category -%}
+								<li class="footer__menu-item">
+									<a href="{{ category.link }}" class="footer__menu-link">{{ category.title }}</a>
+								</li>
+							{%- endfor %}
+						</ul>
+					</div>
+				</div>
+				<div class="footer__menu footer__menu_type_address">
+						<div class="footer__menu-title">наши Адреса</div>
+						<ul class="footer__menu-list">
+							{% for address in footer.address -%}
+								<li class="footer__menu-item">{{ address.text }}</li>
+							{%- endfor %}
+						</ul>
+					</div>
+			</div>
+		</div>
+	</div>
+</div>

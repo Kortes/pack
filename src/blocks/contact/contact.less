@@ -1,0 +1,86 @@
+@import "../main/var";
+
+.contact{
+	padding: 35px 0 15px;
+
+	&__title{
+		text-transform: uppercase;
+		font-size: 36px;
+		letter-spacing: 4px;
+		margin: 15px 0;
+	} 
+
+	&__row{
+		display: table;
+		width: 100%;
+	}
+
+	&__cell{
+		display: table-cell;
+		text-align: center;
+		vertical-align: top;
+		width: 33.3%;
+		padding: 0 30px 30px;
+		border-left: 1px dotted @c-border;
+
+		&:first-child{
+			border: none;
+		}
+	}
+
+	&__content{
+		margin-bottom: 0;
+	}
+
+	&__name{
+		font-weight: 600;
+		text-transform: uppercase;
+		letter-spacing: 3px;
+		position: relative;
+		padding: 60px 0 25px;
+		margin-bottom: 25px;
+		color: @c-title;
+
+		&:before{
+			content: "";
+			position: absolute;
+			bottom: 0;
+			left: 50%;
+			width: 120px;
+			height: 2px;
+			background: @c-red;
+			margin-left: -60px;
+		}
+
+		&:after{
+			content: "";
+			position: absolute;
+			top: 0;
+			left: 0;
+			right: 0;
+			height: 36px;
+			background: url(../images/contact-ico.png) no-repeat center;
+		}
+
+		&_phone:after{
+			background-position: center 0;
+		}
+
+		&_address:after{
+			background-position: center -36px;
+		}
+
+		&_mail:after{
+			background-position: center -72px;
+		}
+	}
+
+	&__mail{
+		color: @c-text;
+	}
+
+	&__sotial{
+		text-align: center;
+		padding-bottom: 75px;
+	}
+}

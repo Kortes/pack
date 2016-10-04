@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+
+{% set similar = {
+	"title": "Похожие товары", 
+	"list": [
+		{"title": "Мишка-конструктор  с основой. Оазис", "link": "#", "image": "images/goods.jpg", "text": "Рыбное описание товара Рыбное описание товара", "price": "250 000", "oldprice": "260 000", "count": "987", "type": "new" },
+		{"title": "Мишка-конструктор  с основой. Оазис", "link": "#", "image": "images/goods.jpg", "text": "Рыбное описание товара Рыбное описание товара", "price": "250 000", "oldprice": "260 000" },
+		{"title": "Мишка-конструктор  с основой. Оазис", "link": "#", "image": "images/goods.jpg", "text": "Рыбное описание товара Рыбное описание товара", "price": "250 000", "oldprice": "260 000", "count": "987", "type": "new" },
+		{"title": "Мишка-конструктор  с основой. Оазис", "link": "#", "image": "images/goods.jpg", "text": "Рыбное описание товара Рыбное описание товара", "price": "250 000", "oldprice": "260 000" }]
+}%}
+{% set viewed = {
+	"title": "Недавно просмотренные товары", "link": "#", "list": [
+		{"title": "Мишка-конструктор  с основой. Оазис", "link": "#", "image": "images/goods.jpg", "text": "Рыбное описание товара Рыбное описание товара", "price": "250 000", "oldprice": "260 000", "count": "987", "type": "new" },
+		{"title": "Мишка-конструктор  с основой. Оазис", "link": "#", "image": "images/goods.jpg", "text": "Рыбное описание товара Рыбное описание товара", "price": "250 000", "oldprice": "260 000" },
+		{"title": "Мишка-конструктор  с основой. Оазис", "link": "#", "image": "images/goods.jpg", "text": "Рыбное описание товара Рыбное описание товара", "price": "250 000", "oldprice": "260 000", "count": "987", "type": "new" },
+		{"title": "Мишка-конструктор  с основой. Оазис", "link": "#", "image": "images/goods.jpg", "text": "Рыбное описание товара Рыбное описание товара", "price": "250 000", "oldprice": "260 000" }
+	]
+}%}
+
+{% block content %}
+	{% include 'card.html'%}
+	{% include 'viewed.html'%}
+	{% include 'similar.html'%}
+{% endblock %}
+
+{% block script %}
+    <script src="ui/customCarousel/customCarousel.js"></script>
+{% endblock %}
